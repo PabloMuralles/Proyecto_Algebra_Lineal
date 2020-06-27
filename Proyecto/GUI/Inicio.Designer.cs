@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_direccion = new System.Windows.Forms.TextBox();
             this.groupBox_opciones = new System.Windows.Forms.GroupBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton_afilar = new System.Windows.Forms.RadioButton();
@@ -75,12 +75,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Dirección de Imagen";
             // 
-            // textBox1
+            // textBox_direccion
             // 
-            this.textBox1.Location = new System.Drawing.Point(181, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(339, 27);
-            this.textBox1.TabIndex = 1;
+            this.textBox_direccion.Location = new System.Drawing.Point(181, 31);
+            this.textBox_direccion.Name = "textBox_direccion";
+            this.textBox_direccion.Size = new System.Drawing.Size(339, 27);
+            this.textBox_direccion.TabIndex = 1;
             // 
             // groupBox_opciones
             // 
@@ -391,6 +391,7 @@
             this.button_cargar.TabIndex = 3;
             this.button_cargar.Text = "Cargar";
             this.button_cargar.UseVisualStyleBackColor = true;
+            this.button_cargar.Click += new System.EventHandler(this.button_cargar_Click);
             // 
             // button_aplicar
             // 
@@ -410,7 +411,7 @@
             this.Controls.Add(this.button_cargar);
             this.Controls.Add(this.groupBox_matrizPersonalizada);
             this.Controls.Add(this.groupBox_opciones);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox_direccion);
             this.Controls.Add(this.label1);
             this.Name = "Inicio";
             this.Text = "Inicio";
@@ -426,7 +427,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_direccion;
         private System.Windows.Forms.GroupBox groupBox_opciones;
         private System.Windows.Forms.RadioButton radioButton_difuminado;
         private System.Windows.Forms.GroupBox groupBox_matrizPersonalizada;
