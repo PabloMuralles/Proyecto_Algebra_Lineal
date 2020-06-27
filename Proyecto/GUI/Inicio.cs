@@ -14,5 +14,15 @@ namespace Proyecto.GUI
         {
             InitializeComponent();
         }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox_opciones_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
