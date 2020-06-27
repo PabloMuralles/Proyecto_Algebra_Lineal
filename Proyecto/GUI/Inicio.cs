@@ -60,5 +60,18 @@ namespace Proyecto.GUI
                 }
             }
         }
+
+        private void textBox_a_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ActivarMatriz()
+        {
+            if (radio)
+            {
+
+            }
+        }
     }
 }

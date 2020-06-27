@@ -31,13 +31,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_direccion = new System.Windows.Forms.TextBox();
             this.groupBox_opciones = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton_personalizado = new System.Windows.Forms.RadioButton();
             this.radioButton_afilar = new System.Windows.Forms.RadioButton();
             this.radioButton_difuminado = new System.Windows.Forms.RadioButton();
             this.radioButton_sobelInferior = new System.Windows.Forms.RadioButton();
             this.radioButton_sobelIzquierdo = new System.Windows.Forms.RadioButton();
             this.radioButton_contorno = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton_sobelDerecho = new System.Windows.Forms.RadioButton();
             this.radioButton_sobelSuperior = new System.Windows.Forms.RadioButton();
             this.radioButton_original = new System.Windows.Forms.RadioButton();
             this.radioButton_realzar = new System.Windows.Forms.RadioButton();
@@ -84,13 +84,13 @@
             // 
             // groupBox_opciones
             // 
-            this.groupBox_opciones.Controls.Add(this.radioButton3);
+            this.groupBox_opciones.Controls.Add(this.radioButton_personalizado);
             this.groupBox_opciones.Controls.Add(this.radioButton_afilar);
             this.groupBox_opciones.Controls.Add(this.radioButton_difuminado);
             this.groupBox_opciones.Controls.Add(this.radioButton_sobelInferior);
             this.groupBox_opciones.Controls.Add(this.radioButton_sobelIzquierdo);
             this.groupBox_opciones.Controls.Add(this.radioButton_contorno);
-            this.groupBox_opciones.Controls.Add(this.radioButton2);
+            this.groupBox_opciones.Controls.Add(this.radioButton_sobelDerecho);
             this.groupBox_opciones.Controls.Add(this.radioButton_sobelSuperior);
             this.groupBox_opciones.Controls.Add(this.radioButton_original);
             this.groupBox_opciones.Controls.Add(this.radioButton_realzar);
@@ -102,16 +102,16 @@
             this.groupBox_opciones.Text = "Opciones";
             this.groupBox_opciones.Enter += new System.EventHandler(this.groupBox_opciones_Enter);
             // 
-            // radioButton3
+            // radioButton_personalizado
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(178, 250);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(121, 24);
-            this.radioButton3.TabIndex = 0;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Personalisado";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton_personalizado.AutoSize = true;
+            this.radioButton_personalizado.Location = new System.Drawing.Point(178, 250);
+            this.radioButton_personalizado.Name = "radioButton_personalizado";
+            this.radioButton_personalizado.Size = new System.Drawing.Size(121, 24);
+            this.radioButton_personalizado.TabIndex = 0;
+            this.radioButton_personalizado.TabStop = true;
+            this.radioButton_personalizado.Text = "Personalisado";
+            this.radioButton_personalizado.UseVisualStyleBackColor = true;
             // 
             // radioButton_afilar
             // 
@@ -168,16 +168,16 @@
             this.radioButton_contorno.Text = "Contorno";
             this.radioButton_contorno.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButton_sobelDerecho
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(178, 148);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(128, 24);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Sobel Derecho";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton_sobelDerecho.AutoSize = true;
+            this.radioButton_sobelDerecho.Location = new System.Drawing.Point(178, 148);
+            this.radioButton_sobelDerecho.Name = "radioButton_sobelDerecho";
+            this.radioButton_sobelDerecho.Size = new System.Drawing.Size(128, 24);
+            this.radioButton_sobelDerecho.TabIndex = 1;
+            this.radioButton_sobelDerecho.TabStop = true;
+            this.radioButton_sobelDerecho.Text = "Sobel Derecho";
+            this.radioButton_sobelDerecho.UseVisualStyleBackColor = true;
             // 
             // radioButton_sobelSuperior
             // 
@@ -375,6 +375,7 @@
             this.textBox_a.Name = "textBox_a";
             this.textBox_a.Size = new System.Drawing.Size(58, 27);
             this.textBox_a.TabIndex = 0;
+            this.textBox_a.TextChanged += new System.EventHandler(this.textBox_a_TextChanged);
             // 
             // textBox_c
             // 
@@ -432,13 +433,13 @@
         private System.Windows.Forms.RadioButton radioButton_difuminado;
         private System.Windows.Forms.GroupBox groupBox_matrizPersonalizada;
         private System.Windows.Forms.RadioButton radioButton_sobelSuperior;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton_sobelDerecho;
         private System.Windows.Forms.RadioButton radioButton_realzar;
         private System.Windows.Forms.RadioButton radioButton_original;
         private System.Windows.Forms.RadioButton radioButton_contorno;
         private System.Windows.Forms.RadioButton radioButton_sobelIzquierdo;
         private System.Windows.Forms.RadioButton radioButton_sobelInferior;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton_personalizado;
         private System.Windows.Forms.RadioButton radioButton_afilar;
         private System.Windows.Forms.Button button_cargar;
         private System.Windows.Forms.Button button_aplicar;
