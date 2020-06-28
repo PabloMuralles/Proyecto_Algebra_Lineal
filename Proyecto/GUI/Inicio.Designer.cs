@@ -69,18 +69,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 26);
+            this.label1.Location = new System.Drawing.Point(11, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 15);
+            this.label1.Size = new System.Drawing.Size(147, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Dirección de Imagen";
             // 
             // textBox_direccion
             // 
-            this.textBox_direccion.Location = new System.Drawing.Point(158, 23);
-            this.textBox_direccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_direccion.Location = new System.Drawing.Point(181, 31);
             this.textBox_direccion.Name = "textBox_direccion";
-            this.textBox_direccion.Size = new System.Drawing.Size(297, 23);
+            this.textBox_direccion.Size = new System.Drawing.Size(339, 27);
             this.textBox_direccion.TabIndex = 1;
             // 
             // groupBox_opciones
@@ -95,11 +94,9 @@
             this.groupBox_opciones.Controls.Add(this.radioButton_sobelSuperior);
             this.groupBox_opciones.Controls.Add(this.radioButton_original);
             this.groupBox_opciones.Controls.Add(this.radioButton_realzar);
-            this.groupBox_opciones.Location = new System.Drawing.Point(10, 59);
-            this.groupBox_opciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox_opciones.Location = new System.Drawing.Point(11, 79);
             this.groupBox_opciones.Name = "groupBox_opciones";
-            this.groupBox_opciones.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox_opciones.Size = new System.Drawing.Size(302, 227);
+            this.groupBox_opciones.Size = new System.Drawing.Size(345, 303);
             this.groupBox_opciones.TabIndex = 2;
             this.groupBox_opciones.TabStop = false;
             this.groupBox_opciones.Text = "Opciones";
@@ -108,10 +105,9 @@
             // radioButton_personalizado
             // 
             this.radioButton_personalizado.AutoSize = true;
-            this.radioButton_personalizado.Location = new System.Drawing.Point(156, 188);
-            this.radioButton_personalizado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButton_personalizado.Location = new System.Drawing.Point(178, 251);
             this.radioButton_personalizado.Name = "radioButton_personalizado";
-            this.radioButton_personalizado.Size = new System.Drawing.Size(98, 19);
+            this.radioButton_personalizado.Size = new System.Drawing.Size(121, 24);
             this.radioButton_personalizado.TabIndex = 0;
             this.radioButton_personalizado.TabStop = true;
             this.radioButton_personalizado.Text = "Personalisado";
@@ -121,10 +117,9 @@
             // radioButton_afilar
             // 
             this.radioButton_afilar.AutoSize = true;
-            this.radioButton_afilar.Location = new System.Drawing.Point(156, 151);
-            this.radioButton_afilar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButton_afilar.Location = new System.Drawing.Point(178, 201);
             this.radioButton_afilar.Name = "radioButton_afilar";
-            this.radioButton_afilar.Size = new System.Drawing.Size(53, 19);
+            this.radioButton_afilar.Size = new System.Drawing.Size(66, 24);
             this.radioButton_afilar.TabIndex = 10;
             this.radioButton_afilar.TabStop = true;
             this.radioButton_afilar.Text = "Afilar";
@@ -133,10 +128,9 @@
             // radioButton_difuminado
             // 
             this.radioButton_difuminado.AutoSize = true;
-            this.radioButton_difuminado.Location = new System.Drawing.Point(5, 36);
-            this.radioButton_difuminado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButton_difuminado.Location = new System.Drawing.Point(6, 48);
             this.radioButton_difuminado.Name = "radioButton_difuminado";
-            this.radioButton_difuminado.Size = new System.Drawing.Size(88, 19);
+            this.radioButton_difuminado.Size = new System.Drawing.Size(109, 24);
             this.radioButton_difuminado.TabIndex = 9;
             this.radioButton_difuminado.TabStop = true;
             this.radioButton_difuminado.Text = "Difuminado";
@@ -145,10 +139,9 @@
             // radioButton_sobelInferior
             // 
             this.radioButton_sobelInferior.AutoSize = true;
-            this.radioButton_sobelInferior.Location = new System.Drawing.Point(5, 75);
-            this.radioButton_sobelInferior.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButton_sobelInferior.Location = new System.Drawing.Point(6, 100);
             this.radioButton_sobelInferior.Name = "radioButton_sobelInferior";
-            this.radioButton_sobelInferior.Size = new System.Drawing.Size(95, 19);
+            this.radioButton_sobelInferior.Size = new System.Drawing.Size(120, 24);
             this.radioButton_sobelInferior.TabIndex = 7;
             this.radioButton_sobelInferior.TabStop = true;
             this.radioButton_sobelInferior.Text = "Sobel Inferior";
@@ -157,10 +150,9 @@
             // radioButton_sobelIzquierdo
             // 
             this.radioButton_sobelIzquierdo.AutoSize = true;
-            this.radioButton_sobelIzquierdo.Location = new System.Drawing.Point(5, 111);
-            this.radioButton_sobelIzquierdo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButton_sobelIzquierdo.Location = new System.Drawing.Point(6, 148);
             this.radioButton_sobelIzquierdo.Name = "radioButton_sobelIzquierdo";
-            this.radioButton_sobelIzquierdo.Size = new System.Drawing.Size(106, 19);
+            this.radioButton_sobelIzquierdo.Size = new System.Drawing.Size(135, 24);
             this.radioButton_sobelIzquierdo.TabIndex = 6;
             this.radioButton_sobelIzquierdo.TabStop = true;
             this.radioButton_sobelIzquierdo.Text = "Sobel Izquierdo";
@@ -169,10 +161,9 @@
             // radioButton_contorno
             // 
             this.radioButton_contorno.AutoSize = true;
-            this.radioButton_contorno.Location = new System.Drawing.Point(5, 151);
-            this.radioButton_contorno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButton_contorno.Location = new System.Drawing.Point(6, 201);
             this.radioButton_contorno.Name = "radioButton_contorno";
-            this.radioButton_contorno.Size = new System.Drawing.Size(76, 19);
+            this.radioButton_contorno.Size = new System.Drawing.Size(92, 24);
             this.radioButton_contorno.TabIndex = 5;
             this.radioButton_contorno.TabStop = true;
             this.radioButton_contorno.Text = "Contorno";
@@ -181,10 +172,9 @@
             // radioButton_sobelDerecho
             // 
             this.radioButton_sobelDerecho.AutoSize = true;
-            this.radioButton_sobelDerecho.Location = new System.Drawing.Point(156, 111);
-            this.radioButton_sobelDerecho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButton_sobelDerecho.Location = new System.Drawing.Point(178, 148);
             this.radioButton_sobelDerecho.Name = "radioButton_sobelDerecho";
-            this.radioButton_sobelDerecho.Size = new System.Drawing.Size(101, 19);
+            this.radioButton_sobelDerecho.Size = new System.Drawing.Size(128, 24);
             this.radioButton_sobelDerecho.TabIndex = 1;
             this.radioButton_sobelDerecho.TabStop = true;
             this.radioButton_sobelDerecho.Text = "Sobel Derecho";
@@ -193,10 +183,9 @@
             // radioButton_sobelSuperior
             // 
             this.radioButton_sobelSuperior.AutoSize = true;
-            this.radioButton_sobelSuperior.Location = new System.Drawing.Point(156, 75);
-            this.radioButton_sobelSuperior.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButton_sobelSuperior.Location = new System.Drawing.Point(178, 100);
             this.radioButton_sobelSuperior.Name = "radioButton_sobelSuperior";
-            this.radioButton_sobelSuperior.Size = new System.Drawing.Size(101, 19);
+            this.radioButton_sobelSuperior.Size = new System.Drawing.Size(128, 24);
             this.radioButton_sobelSuperior.TabIndex = 0;
             this.radioButton_sobelSuperior.TabStop = true;
             this.radioButton_sobelSuperior.Text = "Sobel Superior";
@@ -205,10 +194,9 @@
             // radioButton_original
             // 
             this.radioButton_original.AutoSize = true;
-            this.radioButton_original.Location = new System.Drawing.Point(5, 188);
-            this.radioButton_original.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButton_original.Location = new System.Drawing.Point(6, 251);
             this.radioButton_original.Name = "radioButton_original";
-            this.radioButton_original.Size = new System.Drawing.Size(67, 19);
+            this.radioButton_original.Size = new System.Drawing.Size(83, 24);
             this.radioButton_original.TabIndex = 4;
             this.radioButton_original.TabStop = true;
             this.radioButton_original.Text = "Original";
@@ -217,10 +205,9 @@
             // radioButton_realzar
             // 
             this.radioButton_realzar.AutoSize = true;
-            this.radioButton_realzar.Location = new System.Drawing.Point(156, 36);
-            this.radioButton_realzar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButton_realzar.Location = new System.Drawing.Point(178, 48);
             this.radioButton_realzar.Name = "radioButton_realzar";
-            this.radioButton_realzar.Size = new System.Drawing.Size(62, 19);
+            this.radioButton_realzar.Size = new System.Drawing.Size(79, 24);
             this.radioButton_realzar.TabIndex = 3;
             this.radioButton_realzar.TabStop = true;
             this.radioButton_realzar.Text = "Realzar";
@@ -246,11 +233,9 @@
             this.groupBox_matrizPersonalizada.Controls.Add(this.textBox_b);
             this.groupBox_matrizPersonalizada.Controls.Add(this.textBox_a);
             this.groupBox_matrizPersonalizada.Controls.Add(this.textBox_c);
-            this.groupBox_matrizPersonalizada.Location = new System.Drawing.Point(334, 59);
-            this.groupBox_matrizPersonalizada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox_matrizPersonalizada.Location = new System.Drawing.Point(382, 79);
             this.groupBox_matrizPersonalizada.Name = "groupBox_matrizPersonalizada";
-            this.groupBox_matrizPersonalizada.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox_matrizPersonalizada.Size = new System.Drawing.Size(219, 227);
+            this.groupBox_matrizPersonalizada.Size = new System.Drawing.Size(250, 303);
             this.groupBox_matrizPersonalizada.TabIndex = 0;
             this.groupBox_matrizPersonalizada.TabStop = false;
             this.groupBox_matrizPersonalizada.Text = "Matriz Personalizada";
@@ -258,163 +243,153 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(182, 154);
+            this.label10.Location = new System.Drawing.Point(208, 205);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(10, 15);
+            this.label10.Size = new System.Drawing.Size(13, 20);
             this.label10.TabIndex = 1;
             this.label10.Text = "i";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(105, 154);
+            this.label9.Location = new System.Drawing.Point(120, 205);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(14, 15);
+            this.label9.Size = new System.Drawing.Size(17, 20);
             this.label9.TabIndex = 1;
             this.label9.Text = "h";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(23, 154);
+            this.label8.Location = new System.Drawing.Point(26, 205);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(14, 15);
+            this.label8.Size = new System.Drawing.Size(18, 20);
             this.label8.TabIndex = 1;
             this.label8.Text = "g";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(182, 92);
+            this.label7.Location = new System.Drawing.Point(208, 123);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(11, 15);
+            this.label7.Size = new System.Drawing.Size(14, 20);
             this.label7.TabIndex = 1;
             this.label7.Text = "f";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(105, 94);
+            this.label6.Location = new System.Drawing.Point(120, 125);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(13, 15);
+            this.label6.Size = new System.Drawing.Size(17, 20);
             this.label6.TabIndex = 1;
             this.label6.Text = "e";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 94);
+            this.label5.Location = new System.Drawing.Point(26, 125);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(14, 15);
+            this.label5.Size = new System.Drawing.Size(18, 20);
             this.label5.TabIndex = 1;
             this.label5.Text = "d";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(182, 31);
+            this.label4.Location = new System.Drawing.Point(208, 41);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 15);
+            this.label4.Size = new System.Drawing.Size(16, 20);
             this.label4.TabIndex = 1;
             this.label4.Text = "c";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(105, 31);
+            this.label3.Location = new System.Drawing.Point(120, 41);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(14, 15);
+            this.label3.Size = new System.Drawing.Size(18, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "b";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 31);
+            this.label2.Location = new System.Drawing.Point(26, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 15);
+            this.label2.Size = new System.Drawing.Size(17, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "a";
             // 
             // textBox_e
             // 
-            this.textBox_e.Location = new System.Drawing.Point(84, 111);
-            this.textBox_e.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_e.Location = new System.Drawing.Point(96, 148);
             this.textBox_e.Name = "textBox_e";
-            this.textBox_e.Size = new System.Drawing.Size(51, 23);
+            this.textBox_e.Size = new System.Drawing.Size(58, 27);
             this.textBox_e.TabIndex = 0;
             // 
             // textBox_i
             // 
-            this.textBox_i.Location = new System.Drawing.Point(163, 172);
-            this.textBox_i.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_i.Location = new System.Drawing.Point(186, 229);
             this.textBox_i.Name = "textBox_i";
-            this.textBox_i.Size = new System.Drawing.Size(51, 23);
+            this.textBox_i.Size = new System.Drawing.Size(58, 27);
             this.textBox_i.TabIndex = 0;
             // 
             // textBox_h
             // 
-            this.textBox_h.Location = new System.Drawing.Point(84, 172);
-            this.textBox_h.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_h.Location = new System.Drawing.Point(96, 229);
             this.textBox_h.Name = "textBox_h";
-            this.textBox_h.Size = new System.Drawing.Size(51, 23);
+            this.textBox_h.Size = new System.Drawing.Size(58, 27);
             this.textBox_h.TabIndex = 0;
             // 
             // textBox_g
             // 
-            this.textBox_g.Location = new System.Drawing.Point(5, 172);
-            this.textBox_g.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_g.Location = new System.Drawing.Point(6, 229);
             this.textBox_g.Name = "textBox_g";
-            this.textBox_g.Size = new System.Drawing.Size(51, 23);
+            this.textBox_g.Size = new System.Drawing.Size(58, 27);
             this.textBox_g.TabIndex = 0;
             // 
             // textBox_f
             // 
-            this.textBox_f.Location = new System.Drawing.Point(163, 109);
-            this.textBox_f.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_f.Location = new System.Drawing.Point(186, 145);
             this.textBox_f.Name = "textBox_f";
-            this.textBox_f.Size = new System.Drawing.Size(51, 23);
+            this.textBox_f.Size = new System.Drawing.Size(58, 27);
             this.textBox_f.TabIndex = 0;
             // 
             // textBox_d
             // 
-            this.textBox_d.Location = new System.Drawing.Point(5, 111);
-            this.textBox_d.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_d.Location = new System.Drawing.Point(6, 148);
             this.textBox_d.Name = "textBox_d";
-            this.textBox_d.Size = new System.Drawing.Size(51, 23);
+            this.textBox_d.Size = new System.Drawing.Size(58, 27);
             this.textBox_d.TabIndex = 0;
             // 
             // textBox_b
             // 
-            this.textBox_b.Location = new System.Drawing.Point(84, 48);
-            this.textBox_b.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_b.Location = new System.Drawing.Point(96, 64);
             this.textBox_b.Name = "textBox_b";
-            this.textBox_b.Size = new System.Drawing.Size(51, 23);
+            this.textBox_b.Size = new System.Drawing.Size(58, 27);
             this.textBox_b.TabIndex = 0;
             // 
             // textBox_a
             // 
-            this.textBox_a.Location = new System.Drawing.Point(5, 48);
-            this.textBox_a.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_a.Location = new System.Drawing.Point(6, 64);
             this.textBox_a.Name = "textBox_a";
-            this.textBox_a.Size = new System.Drawing.Size(51, 23);
+            this.textBox_a.Size = new System.Drawing.Size(58, 27);
             this.textBox_a.TabIndex = 0;
             this.textBox_a.TextChanged += new System.EventHandler(this.textBox_a_TextChanged);
             // 
             // textBox_c
             // 
-            this.textBox_c.Location = new System.Drawing.Point(163, 48);
-            this.textBox_c.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_c.Location = new System.Drawing.Point(186, 64);
             this.textBox_c.Name = "textBox_c";
-            this.textBox_c.Size = new System.Drawing.Size(51, 23);
+            this.textBox_c.Size = new System.Drawing.Size(58, 27);
             this.textBox_c.TabIndex = 0;
             // 
             // button_cargar
             // 
-            this.button_cargar.Location = new System.Drawing.Point(471, 23);
-            this.button_cargar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_cargar.Location = new System.Drawing.Point(538, 31);
             this.button_cargar.Name = "button_cargar";
-            this.button_cargar.Size = new System.Drawing.Size(82, 23);
+            this.button_cargar.Size = new System.Drawing.Size(94, 31);
             this.button_cargar.TabIndex = 3;
             this.button_cargar.Text = "Cargar";
             this.button_cargar.UseVisualStyleBackColor = true;
@@ -422,26 +397,25 @@
             // 
             // button_aplicar
             // 
-            this.button_aplicar.Location = new System.Drawing.Point(244, 307);
-            this.button_aplicar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_aplicar.Location = new System.Drawing.Point(279, 409);
             this.button_aplicar.Name = "button_aplicar";
-            this.button_aplicar.Size = new System.Drawing.Size(82, 22);
+            this.button_aplicar.Size = new System.Drawing.Size(94, 29);
             this.button_aplicar.TabIndex = 4;
             this.button_aplicar.Text = "Aplicar";
             this.button_aplicar.UseVisualStyleBackColor = true;
+            this.button_aplicar.Click += new System.EventHandler(this.button_aplicar_Click);
             // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 338);
+            this.ClientSize = new System.Drawing.Size(679, 451);
             this.Controls.Add(this.button_aplicar);
             this.Controls.Add(this.button_cargar);
             this.Controls.Add(this.groupBox_matrizPersonalizada);
             this.Controls.Add(this.groupBox_opciones);
             this.Controls.Add(this.textBox_direccion);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Inicio";
             this.Text = "Inicio";
             this.groupBox_opciones.ResumeLayout(false);

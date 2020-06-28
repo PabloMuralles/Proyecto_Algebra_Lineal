@@ -66,7 +66,10 @@ namespace Proyecto.GUI
         {
             
         }
-
+        /// <summary>
+        /// Metodo para poder desactivar o activar los textbox de la matriz personalizada
+        /// </summary>
+        /// <param name="accion"></param>
         private void ActivarMatriz(bool accion)
         {
 
@@ -92,6 +95,13 @@ namespace Proyecto.GUI
             {
                 ActivarMatriz(false);
             }
+        }
+
+        private void button_aplicar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Filtros frmFiltros = new Filtros(this);
+            frmFiltros.Show();
         }
     }
 }
