@@ -9,6 +9,7 @@ namespace Proyecto.GUI
         public Inicio()
         {
             InitializeComponent();
+            // se desactiva los texbox de la matriz
             ActivarMatriz(false);
         }
 
@@ -87,6 +88,7 @@ namespace Proyecto.GUI
 
         private void radioButton_personalizado_CheckedChanged(object sender, EventArgs e)
         {
+            // se verifica que si esta seleccionadio el radiobutton personalizado se active los textbox de la matriz y sino se desactiven
             if(radioButton_personalizado.Checked == true)
             {
                 ActivarMatriz(true);
@@ -99,9 +101,23 @@ namespace Proyecto.GUI
 
         private void button_aplicar_Click(object sender, EventArgs e)
         {
+            // se manda a llamar al otro forms filtros y se manda como parametro el actual asi se pueden guardar la informacion ingresada
             this.Hide();
             Filtros frmFiltros = new Filtros(this);
             frmFiltros.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox_a.Clear();
+            textBox_b.Clear();
+            textBox_c.Clear();
+            textBox_d.Clear();
+            textBox_e.Clear();
+            textBox_f.Clear();
+            textBox_g.Clear();
+            textBox_h.Clear();
+            textBox_i.Clear();
         }
     }
 }

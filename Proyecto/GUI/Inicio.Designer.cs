@@ -62,6 +62,7 @@
             this.textBox_c = new System.Windows.Forms.TextBox();
             this.button_cargar = new System.Windows.Forms.Button();
             this.button_aplicar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox_opciones.SuspendLayout();
             this.groupBox_matrizPersonalizada.SuspendLayout();
             this.SuspendLayout();
@@ -215,6 +216,7 @@
             // 
             // groupBox_matrizPersonalizada
             // 
+            this.groupBox_matrizPersonalizada.Controls.Add(this.button1);
             this.groupBox_matrizPersonalizada.Controls.Add(this.label10);
             this.groupBox_matrizPersonalizada.Controls.Add(this.label9);
             this.groupBox_matrizPersonalizada.Controls.Add(this.label8);
@@ -405,6 +407,16 @@
             this.button_aplicar.UseVisualStyleBackColor = true;
             this.button_aplicar.Click += new System.EventHandler(this.button_aplicar_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(89, 274);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(65, 29);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Borrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -463,5 +475,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_e;
+        private System.Windows.Forms.Button button1;
     }
 }
