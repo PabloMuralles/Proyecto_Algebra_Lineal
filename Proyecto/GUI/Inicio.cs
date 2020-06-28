@@ -128,19 +128,35 @@ namespace Proyecto.GUI
         {
 
 
-            if (VerificarTextBoxs() == false)
+            if (radioButton_personalizado.Checked == true)
             {
-                MessageBox.Show("Ingreso algo difierente a un número decimal, entero, dejo en blanco alguna o ingreso mal el número");
+                if (VerificarTextBoxs() == true)
+                {
+                    AplicarFiltros();
+
+                }
+                else
+                {
+                    MessageBox.Show("Ingreso algo difierente a un número decimal, entero, dejo en blanco alguna o ingreso mal el número");
+                }
             }
             else
             {
-                // se manda a llamar al otro forms filtros y se manda como parametro el actual asi se pueden guardar la informacion ingresada
-                this.Hide();
-                Filtros frmFiltros = new Filtros(this);
-                frmFiltros.Show();
-
+                AplicarFiltros();
             }
 
+
+        }
+
+        /// <summary>
+        /// Metodo para aplicar los filtros a la imagen y llamar al form para motrarlos
+        /// </summary>
+        private void AplicarFiltros()
+        {
+            // se manda a llamar al otro forms filtros y se manda como parametro el actual asi se pueden guardar la informacion ingresada
+            this.Hide();
+            Filtros frmFiltros = new Filtros(this);
+            frmFiltros.Show();
 
         }
 
@@ -156,6 +172,7 @@ namespace Proyecto.GUI
             textBox_h.Clear();
             textBox_i.Clear();
         }
+
         #region key press textbox
 
  

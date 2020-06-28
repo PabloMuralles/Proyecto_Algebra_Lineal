@@ -110,7 +110,6 @@
             this.radioButton_personalizado.Name = "radioButton_personalizado";
             this.radioButton_personalizado.Size = new System.Drawing.Size(121, 24);
             this.radioButton_personalizado.TabIndex = 0;
-            this.radioButton_personalizado.TabStop = true;
             this.radioButton_personalizado.Text = "Personalisado";
             this.radioButton_personalizado.UseVisualStyleBackColor = true;
             this.radioButton_personalizado.CheckedChanged += new System.EventHandler(this.radioButton_personalizado_CheckedChanged);
@@ -122,13 +121,13 @@
             this.radioButton_afilar.Name = "radioButton_afilar";
             this.radioButton_afilar.Size = new System.Drawing.Size(66, 24);
             this.radioButton_afilar.TabIndex = 10;
-            this.radioButton_afilar.TabStop = true;
             this.radioButton_afilar.Text = "Afilar";
             this.radioButton_afilar.UseVisualStyleBackColor = true;
             // 
             // radioButton_difuminado
             // 
             this.radioButton_difuminado.AutoSize = true;
+            this.radioButton_difuminado.Checked = true;
             this.radioButton_difuminado.Location = new System.Drawing.Point(6, 48);
             this.radioButton_difuminado.Name = "radioButton_difuminado";
             this.radioButton_difuminado.Size = new System.Drawing.Size(109, 24);
@@ -144,7 +143,6 @@
             this.radioButton_sobelInferior.Name = "radioButton_sobelInferior";
             this.radioButton_sobelInferior.Size = new System.Drawing.Size(120, 24);
             this.radioButton_sobelInferior.TabIndex = 7;
-            this.radioButton_sobelInferior.TabStop = true;
             this.radioButton_sobelInferior.Text = "Sobel Inferior";
             this.radioButton_sobelInferior.UseVisualStyleBackColor = true;
             // 
@@ -155,7 +153,6 @@
             this.radioButton_sobelIzquierdo.Name = "radioButton_sobelIzquierdo";
             this.radioButton_sobelIzquierdo.Size = new System.Drawing.Size(135, 24);
             this.radioButton_sobelIzquierdo.TabIndex = 6;
-            this.radioButton_sobelIzquierdo.TabStop = true;
             this.radioButton_sobelIzquierdo.Text = "Sobel Izquierdo";
             this.radioButton_sobelIzquierdo.UseVisualStyleBackColor = true;
             // 
@@ -166,7 +163,6 @@
             this.radioButton_contorno.Name = "radioButton_contorno";
             this.radioButton_contorno.Size = new System.Drawing.Size(92, 24);
             this.radioButton_contorno.TabIndex = 5;
-            this.radioButton_contorno.TabStop = true;
             this.radioButton_contorno.Text = "Contorno";
             this.radioButton_contorno.UseVisualStyleBackColor = true;
             // 
@@ -177,7 +173,6 @@
             this.radioButton_sobelDerecho.Name = "radioButton_sobelDerecho";
             this.radioButton_sobelDerecho.Size = new System.Drawing.Size(128, 24);
             this.radioButton_sobelDerecho.TabIndex = 1;
-            this.radioButton_sobelDerecho.TabStop = true;
             this.radioButton_sobelDerecho.Text = "Sobel Derecho";
             this.radioButton_sobelDerecho.UseVisualStyleBackColor = true;
             // 
@@ -188,7 +183,6 @@
             this.radioButton_sobelSuperior.Name = "radioButton_sobelSuperior";
             this.radioButton_sobelSuperior.Size = new System.Drawing.Size(128, 24);
             this.radioButton_sobelSuperior.TabIndex = 0;
-            this.radioButton_sobelSuperior.TabStop = true;
             this.radioButton_sobelSuperior.Text = "Sobel Superior";
             this.radioButton_sobelSuperior.UseVisualStyleBackColor = true;
             // 
@@ -199,7 +193,6 @@
             this.radioButton_original.Name = "radioButton_original";
             this.radioButton_original.Size = new System.Drawing.Size(83, 24);
             this.radioButton_original.TabIndex = 4;
-            this.radioButton_original.TabStop = true;
             this.radioButton_original.Text = "Original";
             this.radioButton_original.UseVisualStyleBackColor = true;
             // 
@@ -210,7 +203,6 @@
             this.radioButton_realzar.Name = "radioButton_realzar";
             this.radioButton_realzar.Size = new System.Drawing.Size(79, 24);
             this.radioButton_realzar.TabIndex = 3;
-            this.radioButton_realzar.TabStop = true;
             this.radioButton_realzar.Text = "Realzar";
             this.radioButton_realzar.UseVisualStyleBackColor = true;
             // 
