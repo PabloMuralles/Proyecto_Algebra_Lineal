@@ -81,5 +81,17 @@ namespace Proyecto.GUI
             textBox_i.Enabled = accion;
 
         }
+
+        private void radioButton_personalizado_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButton_personalizado.Checked == true)
+            {
+                ActivarMatriz(true);
+            }
+            else
+            {
+                ActivarMatriz(false);
+            }
+        }
     }
 }
