@@ -4,11 +4,13 @@ using System.IO;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security.AccessControl;
 
 namespace Proyecto.GUI
 {
     public partial class Inicio : Form
     {
+        private string direccion = string.Empty;
         public Inicio()
         {
             InitializeComponent();
@@ -29,7 +31,7 @@ namespace Proyecto.GUI
         private void button_cargar_Click(object sender, EventArgs e)
         {
 
-            var Direccion = string.Empty;
+    
             
 
             // variable para poder abrir el dialog
@@ -41,21 +43,21 @@ namespace Proyecto.GUI
                 try
                 {
                     // da la direccion del archivo que se abrio
-                    Direccion = Abrir.FileName;
+                    direccion = Abrir.FileName;
 
                     // da la extecion del archivo para poder validarlo que sea txt
-                    var Extencion = Path.GetExtension(Direccion);
+                    var Extencion = Path.GetExtension(direccion);
 
                     /*valido la extencion del archivo y si es txt lo leo para posteriomente 
                      * guardarlo y sino es un txt se muestra un messaje*/
 
-                    if (Extencion != ".png" && Direccion == null)
+                    if (Extencion != ".png" && direccion == null)
                     {
                         throw new Exception("No se cargo nada o la extencion no es png");
                     }
                     else
                     {
-                        textBox_direccion.Text = Direccion;
+                        textBox_direccion.Text = direccion;
                     }
                     
                 }
@@ -156,6 +158,7 @@ namespace Proyecto.GUI
             // se manda a llamar al otro forms filtros y se manda como parametro el actual asi se pueden guardar la informacion ingresada
             this.Hide();
             Filtros frmFiltros = new Filtros(this);
+            frmFiltros.MostrarImagenOriginal(direccion);
             frmFiltros.Show();
 
         }

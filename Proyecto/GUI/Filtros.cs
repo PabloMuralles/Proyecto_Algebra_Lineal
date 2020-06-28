@@ -21,6 +21,7 @@ namespace Proyecto.GUI
         {
             InitializeComponent();
             this.anteriorInicio = anteriorInicio;
+            
         }
 
         private void button_regresar_Click(object sender, EventArgs e)
@@ -28,6 +29,17 @@ namespace Proyecto.GUI
             // se regresa al form anterior y se cierra el actual
             this.Close();
             anteriorInicio.Show();
+
+        }
+
+        public void MostrarImagenOriginal(string direccion)
+        {
+            pictureBox_original.ImageLocation = direccion;
+            pictureBox_original.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        private void Filtros_Load(object sender, EventArgs e)
+        {
 
         }
     }
