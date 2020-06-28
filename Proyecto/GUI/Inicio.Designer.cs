@@ -42,6 +42,7 @@
             this.radioButton_original = new System.Windows.Forms.RadioButton();
             this.radioButton_realzar = new System.Windows.Forms.RadioButton();
             this.groupBox_matrizPersonalizada = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.textBox_c = new System.Windows.Forms.TextBox();
             this.button_cargar = new System.Windows.Forms.Button();
             this.button_aplicar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox_opciones.SuspendLayout();
             this.groupBox_matrizPersonalizada.SuspendLayout();
             this.SuspendLayout();
@@ -242,6 +242,16 @@
             this.groupBox_matrizPersonalizada.TabStop = false;
             this.groupBox_matrizPersonalizada.Text = "Matriz Personalizada";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(89, 274);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(65, 29);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Borrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -329,6 +339,7 @@
             this.textBox_e.Name = "textBox_e";
             this.textBox_e.Size = new System.Drawing.Size(58, 27);
             this.textBox_e.TabIndex = 0;
+            this.textBox_e.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_e_KeyPress);
             // 
             // textBox_i
             // 
@@ -336,6 +347,7 @@
             this.textBox_i.Name = "textBox_i";
             this.textBox_i.Size = new System.Drawing.Size(58, 27);
             this.textBox_i.TabIndex = 0;
+            this.textBox_i.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_i_KeyPress);
             // 
             // textBox_h
             // 
@@ -343,6 +355,7 @@
             this.textBox_h.Name = "textBox_h";
             this.textBox_h.Size = new System.Drawing.Size(58, 27);
             this.textBox_h.TabIndex = 0;
+            this.textBox_h.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_h_KeyPress);
             // 
             // textBox_g
             // 
@@ -350,6 +363,7 @@
             this.textBox_g.Name = "textBox_g";
             this.textBox_g.Size = new System.Drawing.Size(58, 27);
             this.textBox_g.TabIndex = 0;
+            this.textBox_g.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_g_KeyPress);
             // 
             // textBox_f
             // 
@@ -357,6 +371,7 @@
             this.textBox_f.Name = "textBox_f";
             this.textBox_f.Size = new System.Drawing.Size(58, 27);
             this.textBox_f.TabIndex = 0;
+            this.textBox_f.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_f_KeyPress);
             // 
             // textBox_d
             // 
@@ -364,6 +379,7 @@
             this.textBox_d.Name = "textBox_d";
             this.textBox_d.Size = new System.Drawing.Size(58, 27);
             this.textBox_d.TabIndex = 0;
+            this.textBox_d.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_d_KeyPress);
             // 
             // textBox_b
             // 
@@ -371,6 +387,7 @@
             this.textBox_b.Name = "textBox_b";
             this.textBox_b.Size = new System.Drawing.Size(58, 27);
             this.textBox_b.TabIndex = 0;
+            this.textBox_b.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_b_KeyPress);
             // 
             // textBox_a
             // 
@@ -379,6 +396,7 @@
             this.textBox_a.Size = new System.Drawing.Size(58, 27);
             this.textBox_a.TabIndex = 0;
             this.textBox_a.TextChanged += new System.EventHandler(this.textBox_a_TextChanged);
+            this.textBox_a.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_a_KeyPress);
             // 
             // textBox_c
             // 
@@ -386,6 +404,7 @@
             this.textBox_c.Name = "textBox_c";
             this.textBox_c.Size = new System.Drawing.Size(58, 27);
             this.textBox_c.TabIndex = 0;
+            this.textBox_c.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_c_KeyPress);
             // 
             // button_cargar
             // 
@@ -406,16 +425,6 @@
             this.button_aplicar.Text = "Aplicar";
             this.button_aplicar.UseVisualStyleBackColor = true;
             this.button_aplicar.Click += new System.EventHandler(this.button_aplicar_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(89, 274);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 29);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Borrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Inicio
             // 

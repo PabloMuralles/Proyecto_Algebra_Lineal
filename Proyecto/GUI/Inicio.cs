@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.IO;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Proyecto.GUI
 {
@@ -99,12 +102,46 @@ namespace Proyecto.GUI
             }
         }
 
+        /// <summary>
+        /// metodo para verificar que lo que se ingreso a cada posicion de la matriz este de manera correcta y que solo sean numeros
+        /// </summary>
+        /// <returns></returns>
+        private bool VerificarTextBoxs()
+        {
+            Regex numeros = new Regex(@"^([0-9]+\.[0-9]+)|([0-9]+)$");
+         
+
+            if (numeros.IsMatch(textBox_a.Text) && numeros.IsMatch(textBox_b.Text) && numeros.IsMatch(textBox_c.Text) && numeros.IsMatch(textBox_d.Text)
+                && numeros.IsMatch(textBox_e.Text) && numeros.IsMatch(textBox_f.Text) && numeros.IsMatch(textBox_g.Text) && numeros.IsMatch(textBox_h.Text)
+                && numeros.IsMatch(textBox_i.Text))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
         private void button_aplicar_Click(object sender, EventArgs e)
         {
-            // se manda a llamar al otro forms filtros y se manda como parametro el actual asi se pueden guardar la informacion ingresada
-            this.Hide();
-            Filtros frmFiltros = new Filtros(this);
-            frmFiltros.Show();
+
+
+            if (VerificarTextBoxs() == false)
+            {
+                MessageBox.Show("Ingreso algo difierente a un número decimal, entero, dejo en blanco alguna o ingreso mal el número");
+            }
+            else
+            {
+                // se manda a llamar al otro forms filtros y se manda como parametro el actual asi se pueden guardar la informacion ingresada
+                this.Hide();
+                Filtros frmFiltros = new Filtros(this);
+                frmFiltros.Show();
+
+            }
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -119,5 +156,55 @@ namespace Proyecto.GUI
             textBox_h.Clear();
             textBox_i.Clear();
         }
+        #region key press textbox
+
+ 
+        private void textBox_a_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+
+        private void textBox_b_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
+        }
+
+        private void textBox_c_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void textBox_d_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void textBox_e_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void textBox_f_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+
+        private void textBox_g_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void textBox_h_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void textBox_i_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+        #endregion
+
+
     }
 }
