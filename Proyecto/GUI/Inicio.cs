@@ -9,6 +9,7 @@ namespace Proyecto.GUI
         public Inicio()
         {
             InitializeComponent();
+            ActivarMatriz(false);
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -66,12 +67,19 @@ namespace Proyecto.GUI
             
         }
 
-        private void ActivarMatriz()
+        private void ActivarMatriz(bool accion)
         {
-            if (radio)
-            {
 
-            }
+            textBox_a.Enabled = accion;
+            textBox_b.Enabled = accion;
+            textBox_c.Enabled = accion;
+            textBox_d.Enabled = accion;
+            textBox_e.Enabled = accion;
+            textBox_f.Enabled = accion;
+            textBox_g.Enabled = accion;
+            textBox_h.Enabled = accion;
+            textBox_i.Enabled = accion;
+
         }
     }
 }
