@@ -30,10 +30,6 @@ namespace Proyecto.GUI
 
         private void button_cargar_Click(object sender, EventArgs e)
         {
-
-    
-            
-
             // variable para poder abrir el dialog
             OpenFileDialog Abrir = new OpenFileDialog();
 
@@ -129,24 +125,30 @@ namespace Proyecto.GUI
         private void button_aplicar_Click(object sender, EventArgs e)
         {
 
-
-            if (radioButton_personalizado.Checked == true)
+            if (!string.IsNullOrEmpty(direccion))
             {
-                if (VerificarTextBoxs() == true)
+                if (radioButton_personalizado.Checked == true)
                 {
-                    AplicarFiltros();
+                    if (VerificarTextBoxs() == true)
+                    {
+                        AplicarFiltros();
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingreso algo difierente a un número decimal, entero, dejo en blanco alguna o ingreso mal el número");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Ingreso algo difierente a un número decimal, entero, dejo en blanco alguna o ingreso mal el número");
+                    AplicarFiltros();
                 }
+
             }
             else
             {
-                AplicarFiltros();
+                MessageBox.Show("No se cargado ninguna imagen");
             }
-
 
         }
 
@@ -155,11 +157,22 @@ namespace Proyecto.GUI
         /// </summary>
         private void AplicarFiltros()
         {
-            // se manda a llamar al otro forms filtros y se manda como parametro el actual asi se pueden guardar la informacion ingresada
-            this.Hide();
-            Filtros frmFiltros = new Filtros(this);
-            frmFiltros.MostrarImagenOriginal(direccion);
-            frmFiltros.Show();
+            try
+            {
+                // se manda a llamar al otro forms filtros y se manda como parametro el actual asi se pueden guardar la informacion ingresada
+                this.Hide();
+                Filtros frmFiltros = new Filtros(this);
+                frmFiltros.MostrarImagenOriginal(direccion);
+                var obEscalaGrises = new Manipulacon_Imagen.EscalaGrises();
+                frmFiltros.MostrarImgenGrises(obEscalaGrises.ConvertirImagen(direccion));
+                frmFiltros.Show();
+
+            }
+            catch (Exception p)
+            {
+                MessageBox.Show(p.Message);
+                this.Show();
+            }
 
         }
 
@@ -223,8 +236,12 @@ namespace Proyecto.GUI
         {
             
         }
+
         #endregion
 
+        private void Inicio_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

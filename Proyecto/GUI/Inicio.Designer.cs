@@ -431,6 +431,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Inicio";
             this.Text = "Inicio";
+            this.Load += new System.EventHandler(this.Inicio_Load);
             this.groupBox_opciones.ResumeLayout(false);
             this.groupBox_opciones.PerformLayout();
             this.groupBox_matrizPersonalizada.ResumeLayout(false);

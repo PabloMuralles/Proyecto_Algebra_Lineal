@@ -38,6 +38,11 @@ namespace Proyecto.GUI
             pictureBox_original.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
+        public void MostrarImgenGrises(Bitmap imagen)
+        {
+            pictureBox_escalaGrises.Image = imagen;
+            pictureBox_escalaGrises.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
         private void Filtros_Load(object sender, EventArgs e)
         {
 
