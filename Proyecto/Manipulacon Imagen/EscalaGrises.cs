@@ -40,7 +40,7 @@ namespace Proyecto.Manipulacon_Imagen
             }
             catch (Exception)
             {
-                throw new Exception("La imagen ingresada no es correcta intentar con otra imagen");
+                throw new Exception("La profundidad de los bits es menor a 32");
             }
 
 

@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.AccessControl;
+using System.Drawing;
+using System.Linq;
 
 namespace Proyecto.GUI
 {
@@ -43,9 +45,11 @@ namespace Proyecto.GUI
 
                     // da la extecion del archivo para poder validarlo que sea txt
                     var Extencion = Path.GetExtension(direccion);
-
                     /*valido la extencion del archivo y si es txt lo leo para posteriomente 
                      * guardarlo y sino es un txt se muestra un messaje*/
+
+                    //var prueba = Image.FromFile(direccion);
+                    //var asdf = prueba.PixelFormat;
 
                     if (Extencion != ".png" && direccion == null)
                     {
@@ -161,10 +165,14 @@ namespace Proyecto.GUI
             {
                 // se manda a llamar al otro forms filtros y se manda como parametro el actual asi se pueden guardar la informacion ingresada
                 this.Hide();
-                Filtros frmFiltros = new Filtros(this);
-                frmFiltros.MostrarImagenOriginal(direccion);
-                var obEscalaGrises = new Manipulacon_Imagen.EscalaGrises();
-                frmFiltros.MostrarImgenGrises(obEscalaGrises.ConvertirImagen(direccion));
+                Filtros frmFiltros = new Filtros(this);// llamar al forms filtro y mandarle el form actual
+                frmFiltros.MostrarImagenOriginal(direccion); // mostrar la imagen original
+                var objEscalaGrises = new Manipulacon_Imagen.EscalaGrises();// objeto de la clase escalas a grices
+                var opcionSeleccionada = groupBox_opciones.Controls.OfType<RadioButton>().
+                Where(x => x.Checked).SingleOrDefault<RadioButton>();// linq para poder saber que opcion fue seleccionada
+                var bmpGrises = objEscalaGrises.ConvertirImagen(direccion);// convertir la imagen a escala de grises 
+                var objFiltros = new Manipulacon_Imagen.Kernels(bmpGrises, opcionSeleccionada.Text);// aplicar los filtros a la imgen a grises
+                frmFiltros.MostrarImgenGrises(bmpGrises);// mostrar la imagen a escala de grises en el form filtros
                 frmFiltros.Show();
 
             }
@@ -176,6 +184,12 @@ namespace Proyecto.GUI
 
         }
 
+        private void OpcionSeleccionada()
+        {
+            var opcionSeleccionada = groupBox_opciones.Controls.OfType<RadioButton>().
+                Where(x => x.Checked).SingleOrDefault<RadioButton>();
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             textBox_a.Clear();
