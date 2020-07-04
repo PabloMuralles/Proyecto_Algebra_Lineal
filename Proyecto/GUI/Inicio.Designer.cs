@@ -233,6 +233,7 @@
             this.groupBox_matrizPersonalizada.TabIndex = 0;
             this.groupBox_matrizPersonalizada.TabStop = false;
             this.groupBox_matrizPersonalizada.Text = "Matriz Personalizada";
+            this.groupBox_matrizPersonalizada.Enter += new System.EventHandler(this.groupBox_matrizPersonalizada_Enter);
             // 
             // button1
             // 

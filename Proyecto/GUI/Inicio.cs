@@ -161,8 +161,8 @@ namespace Proyecto.GUI
         /// </summary>
         private void AplicarFiltros()
         {
-            try
-            {
+            //try
+            //{
                 // se manda a llamar al otro forms filtros y se manda como parametro el actual asi se pueden guardar la informacion ingresada
                 this.Hide();
                 Filtros frmFiltros = new Filtros(this);// llamar al forms filtro y mandarle el form actual
@@ -171,16 +171,18 @@ namespace Proyecto.GUI
                 var opcionSeleccionada = groupBox_opciones.Controls.OfType<RadioButton>().
                 Where(x => x.Checked).SingleOrDefault<RadioButton>();// linq para poder saber que opcion fue seleccionada
                 var bmpGrises = objEscalaGrises.ConvertirImagen(direccion);// convertir la imagen a escala de grises 
-                var objFiltros = new Manipulacon_Imagen.Kernels(bmpGrises, opcionSeleccionada.Text);// aplicar los filtros a la imgen a grises
+                var objFiltros = new Manipulacon_Imagen.AplicarFiltros();// aplicar los filtros a la imgen a grises
+                var bmpFiltrada = objFiltros.ObtenerImagenFiltro(bmpGrises, opcionSeleccionada.Text);// obtener la imagen filtadra
                 frmFiltros.MostrarImgenGrises(bmpGrises);// mostrar la imagen a escala de grises en el form filtros
+                frmFiltros.MostrarImgenFiltrada(bmpFiltrada);// mostrar la imagen filtrada de la escala a grises
                 frmFiltros.Show();
 
-            }
-            catch (Exception p)
-            {
-                MessageBox.Show(p.Message);
-                this.Show();
-            }
+            //}
+            //catch (Exception p)
+            //{
+            //    MessageBox.Show(p.Message);
+            //    this.Show();
+            //}
 
         }
 
@@ -254,6 +256,11 @@ namespace Proyecto.GUI
         #endregion
 
         private void Inicio_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox_matrizPersonalizada_Enter(object sender, EventArgs e)
         {
 
         }
