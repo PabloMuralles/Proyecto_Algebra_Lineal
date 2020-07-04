@@ -22,8 +22,7 @@ namespace Proyecto.Manipulacon_Imagen
                     for (int x = 0; x < ancho; x++)
                     {
                         pixel = bmp.GetPixel(x, y);
-
-                      
+                         
                         var r = pixel.R;
                         var g = pixel.G;
                         var b = pixel.B;
