@@ -15,6 +15,12 @@ namespace Proyecto.Manipulacon_Imagen
         {
             return ObtenerMatriz(imagenGrises, opcion);
         }
+        /// <summary>
+        /// Metodo para poder aplicar el filtro correspondiente sin contar la personalizada
+        /// </summary>
+        /// <param name="imagen">el bitmap de la imagen original en escala a grises</param>
+        /// <param name="opc">la opcion seleccionada</param>
+        /// <returns>el bitmap de la nueva imagen con el filtro aplicado</returns>
         private Bitmap ObtenerMatriz(Bitmap imagen, string opc)
         {
             double[,] kernel;
@@ -133,7 +139,11 @@ namespace Proyecto.Manipulacon_Imagen
         }
 
 
-
+        /// <summary>
+        /// Metodo para poder obtener los pixeles en el rango de 0-255
+        /// </summary>
+        /// <param name="matriz"> la matriz con el filtro ya aplicado</param>
+        /// <returns> la matriz con la normalizacion aplicada</returns>
         private Bitmap EscalonarMatriz(double[,] matriz)
         {
 
@@ -168,32 +178,11 @@ namespace Proyecto.Manipulacon_Imagen
             return nuevaImagen; ;
         }
 
-        private (double, double) MaxMinValores(double[,] matrix)
-        {
-            double max = matrix[0, 0];
-            double min = matrix[0, 0];
-
-            var pued = matrix.GetLength(0);
-            var hola = matrix.GetLength(0);
-            for (int i = 1; i < matrix.GetLength(0) - 1; i++)
-            {
-                for (int j = 1; j < matrix.GetLength(1) - 1; j++)
-                {
-
-                    if (matrix[i, j] > max)
-                    {
-                        max = matrix[i, j];
-                    }
-                    else if (matrix[i, j] < min)
-                    {
-                        min = matrix[i, j];
-                    }
-                }
-
-            }
-
-            return (max, min);
-        }
+        /// <summary>
+        /// Metodo para pasar el bitmap de la imagen a grises a un matriz
+        /// </summary>
+        /// <param name="imagen">bitmap de la imagen original a escala a grises</param>
+        /// <returns>matriz de double de los pixeles de la original a escala a grises</returns>
         private double[,] ObtenerMatrizGrises(Bitmap imagen)
         {
             // x= width y y=heigth matriz[y,x]
@@ -211,6 +200,13 @@ namespace Proyecto.Manipulacon_Imagen
             }
             return matrizImagenGrises;
         }
+
+        /// <summary>
+        /// Metodo para aplicar el kernel a toda la imagen
+        /// </summary>
+        /// <param name="imagen">bitmap de la imagen original en escala a grises</param>
+        /// <param name="kernel">matriz kernel del filtro seleccionado</param>
+        /// <returns>bitmap de la imagen con le filtro aplicado</returns>
         private Bitmap OperarMatriz(Bitmap imagen, double[,] kernel)
         {
             var w = imagen.Width;
@@ -253,6 +249,12 @@ namespace Proyecto.Manipulacon_Imagen
         }
 
 
+        /// <summary>
+        /// Metodo para multiplicar las submatrices con la matriz kernel
+        /// </summary>
+        /// <param name="submatriz">la submatriz de la imagen original</param>
+        /// <param name="kernel">kernel a aplicar</param>
+        /// <returns>resultado del nuevo pixel que sera el que ira en el centro</returns>
         private double MultiplicarMatrices(double[,] submatriz, double[,] kernel)
         {
             double resultado = 0;
