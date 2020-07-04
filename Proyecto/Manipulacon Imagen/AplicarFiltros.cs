@@ -195,7 +195,7 @@ namespace Proyecto.Manipulacon_Imagen
             {
                 for (int j = 0; j < h; j++)
                 {
-                    matrizImagenGrises[i, j] = imagen.GetPixel(i, j).G;
+                    matrizImagenGrises[i, j] = imagen.GetPixel(i, j).R;
                 }
 
             }
