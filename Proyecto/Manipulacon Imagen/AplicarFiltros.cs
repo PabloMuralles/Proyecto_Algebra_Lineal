@@ -137,7 +137,7 @@ namespace Proyecto.Manipulacon_Imagen
         private Bitmap EscalonarMatriz(double[,] matriz)
         {
 
-            (double max, double min) = MaxMinValores(matriz);
+            //(double max, double min) = MaxMinValores(matriz);
 
             var nuevaImagen = new Bitmap(matriz.GetLength(0), matriz.GetLength(1));
 
@@ -145,10 +145,20 @@ namespace Proyecto.Manipulacon_Imagen
             {
                 for (int j = 1; j < matriz.GetLength(1) - 1; j++)
                 {
-                    var normalizar = matriz[i, j] / (max - min);
-                    var valorEntero = (127.5 * normalizar) + 127.5;
-                    var pruba = Convert.ToInt32(valorEntero);
-                    nuevaImagen.SetPixel(i, j, Color.FromArgb(pruba, pruba, pruba));
+                    var pixel = matriz[i, j];
+                    if (pixel < 0)
+                    {
+                        nuevaImagen.SetPixel(i, j, Color.FromArgb(0, 0, 0));
+                    }
+                    else if ( pixel > 255)
+                    {
+                        nuevaImagen.SetPixel(i, j, Color.FromArgb(255, 255, 255));
+                    }
+                    else
+                    {
+                        nuevaImagen.SetPixel(i, j, Color.FromArgb((int)pixel, (int)pixel, (int)pixel));
+                    }
+                   
 
                 }
 

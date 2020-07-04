@@ -23,14 +23,14 @@ namespace Proyecto.Manipulacon_Imagen
                     {
                         pixel = bmp.GetPixel(x, y);
 
-                        var a = pixel.A;
+                      
                         var r = pixel.R;
                         var g = pixel.G;
                         var b = pixel.B;
 
                         var promedio = (r + g + b) / 3;
 
-                        bmp.SetPixel(x, y, Color.FromArgb(a, promedio, promedio, promedio));
+                        bmp.SetPixel(x, y, Color.FromArgb(promedio, promedio, promedio));
 
                     }
 
