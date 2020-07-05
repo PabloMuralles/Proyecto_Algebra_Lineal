@@ -91,18 +91,7 @@ namespace Proyecto.GUI
 
         }
 
-        private void radioButton_personalizado_CheckedChanged(object sender, EventArgs e)
-        {
-            // se verifica que si esta seleccionadio el radiobutton personalizado se active los textbox de la matriz y sino se desactiven
-            if(radioButton_personalizado.Checked == true)
-            {
-                ActivarMatriz(true);
-            }
-            else
-            {
-                ActivarMatriz(false);
-            }
-        }
+       
 
         /// <summary>
         /// metodo para verificar que lo que se ingreso a cada posicion de la matriz este de manera correcta y que solo sean numeros
@@ -131,7 +120,7 @@ namespace Proyecto.GUI
 
             if (!string.IsNullOrEmpty(direccion))
             {
-                if (radioButton_personalizado.Checked == true)
+                if (comboBox_filtros.SelectedIndex == 9)
                 {
                     if (VerificarTextBoxs() == true)
                     {
@@ -163,19 +152,17 @@ namespace Proyecto.GUI
         {
             //try
             //{
-                // se manda a llamar al otro forms filtros y se manda como parametro el actual asi se pueden guardar la informacion ingresada
-                this.Hide();
-                Filtros frmFiltros = new Filtros(this);// llamar al forms filtro y mandarle el form actual
-                frmFiltros.MostrarImagenOriginal(direccion); // mostrar la imagen original
+                
+                 
                 var objEscalaGrises = new Manipulacon_Imagen.EscalaGrises();// objeto de la clase escalas a grices
-                var opcionSeleccionada = groupBox_opciones.Controls.OfType<RadioButton>().
-                Where(x => x.Checked).SingleOrDefault<RadioButton>();// linq para poder saber que opcion fue seleccionada
+                var opcionSeleccionada = comboBox_filtros.Text;// linq para poder saber que opcion fue seleccionada
                 var bmpGrises = objEscalaGrises.ConvertirImagen(direccion);// convertir la imagen a escala de grises 
+                pictureBox_grises.Image = bmpGrises;
+                pictureBox_grises.SizeMode = PictureBoxSizeMode.StretchImage;
                 var objFiltros = new Manipulacon_Imagen.AplicarFiltros();// aplicar los filtros a la imgen a grises
-                var bmpFiltrada = objFiltros.ObtenerImagenFiltro(bmpGrises, opcionSeleccionada.Text);// obtener la imagen filtadra
-                frmFiltros.MostrarImgenGrises(bmpGrises);// mostrar la imagen a escala de grises en el form filtros
-                frmFiltros.MostrarImgenFiltrada(bmpFiltrada);// mostrar la imagen filtrada de la escala a grises
-                frmFiltros.Show();
+                var bmpFiltrada = objFiltros.ObtenerImagenFiltro(bmpGrises, opcionSeleccionada);// obtener la imagen filtadra
+                pictureBox_filtrada.Image = bmpFiltrada;
+                pictureBox_filtrada.SizeMode = PictureBoxSizeMode.StretchImage;
 
             //}
             //catch (Exception p)
@@ -186,24 +173,8 @@ namespace Proyecto.GUI
 
         }
 
-        private void OpcionSeleccionada()
-        {
-            var opcionSeleccionada = groupBox_opciones.Controls.OfType<RadioButton>().
-                Where(x => x.Checked).SingleOrDefault<RadioButton>();
-
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            textBox_a.Clear();
-            textBox_b.Clear();
-            textBox_c.Clear();
-            textBox_d.Clear();
-            textBox_e.Clear();
-            textBox_f.Clear();
-            textBox_g.Clear();
-            textBox_h.Clear();
-            textBox_i.Clear();
-        }
+       
+ 
 
         #region key press textbox
 
@@ -257,10 +228,58 @@ namespace Proyecto.GUI
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-
+            comboBox_filtros.Items.Add("Difuminado");
+            comboBox_filtros.Items.Add("Sobel Inferior");
+            comboBox_filtros.Items.Add("Sobel Izquierdo");
+            comboBox_filtros.Items.Add("Contorno");
+            comboBox_filtros.Items.Add("Original");
+            comboBox_filtros.Items.Add("Realzar");
+            comboBox_filtros.Items.Add("Sobel Superior");
+            comboBox_filtros.Items.Add("Sobel Derecho");
+            comboBox_filtros.Items.Add("Afilar");
+            comboBox_filtros.Items.Add("Personalizado");
+            comboBox_filtros.SelectedIndex = 0;
         }
 
         private void groupBox_matrizPersonalizada_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_c_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_borrar_Click(object sender, EventArgs e)
+        {
+            textBox_a.Clear();
+            textBox_b.Clear();
+            textBox_c.Clear();
+            textBox_d.Clear();
+            textBox_e.Clear();
+            textBox_f.Clear();
+            textBox_g.Clear();
+            textBox_h.Clear();
+            textBox_i.Clear();
+        }
+
+        private void comboBox_filtros_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_filtros.SelectedIndex == 9)
+            {
+                ActivarMatriz(true);
+                button_borrar.Enabled = true;
+            }
+            else
+            {
+                ActivarMatriz(false);
+                button_borrar.Enabled = false;
+            }
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }
