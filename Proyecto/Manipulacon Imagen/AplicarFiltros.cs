@@ -160,7 +160,7 @@ namespace Proyecto.Manipulacon_Imagen
                     {
                         nuevaImagen.SetPixel(i, j, Color.FromArgb(0, 0, 0));
                     }
-                    else if ( pixel > 255)
+                    else if (pixel > 255)
                     {
                         nuevaImagen.SetPixel(i, j, Color.FromArgb(255, 255, 255));
                     }
@@ -168,7 +168,7 @@ namespace Proyecto.Manipulacon_Imagen
                     {
                         nuevaImagen.SetPixel(i, j, Color.FromArgb((int)pixel, (int)pixel, (int)pixel));
                     }
-                   
+
 
                 }
 
@@ -189,7 +189,7 @@ namespace Proyecto.Manipulacon_Imagen
             var w = imagen.Width;
             var h = imagen.Height;
             var matrizImagenGrises = new double[w, h];
-             
+
             for (int i = 0; i < w; i++)
             {
                 for (int j = 0; j < h; j++)
@@ -215,17 +215,12 @@ namespace Proyecto.Manipulacon_Imagen
 
             var matrizGrises = ObtenerMatrizGrises(imagen);
 
-            var contador = 0;
             for (int i = 0; i < w; i++)
             {
                 for (int j = 0; j < h; j++)
                 {
                     if (i < w - 2 && j < h - 2)
                     {
-                        if (contador == 1021)
-                        {
-
-                        }
                         var matriztemp = new double[3, 3]
                         {
                                { matrizGrises[i,j],  matrizGrises[i, j+1],  matrizGrises[i, j+2] },
@@ -234,8 +229,86 @@ namespace Proyecto.Manipulacon_Imagen
                         };
                         nuevaImagen[i + 1, j + 1] = MultiplicarMatrices(matriztemp, kernel);
 
-                        contador++;
-
+                    }
+                    if (i == 0 && j == 0)
+                    {
+                        var matriztemp = new double[3, 3]
+                        {
+                               { 0,  0,  0},
+                                {  0,  matrizGrises[i,j],  matrizGrises[i,j + 1] },
+                                {  0,  matrizGrises[i+1,j],   matrizGrises[i+1,j+1] }
+                        };
+                        nuevaImagen[i, j] = MultiplicarMatrices(matriztemp, kernel);
+                    }
+                    if (i == 0 && j == h)
+                    {
+                        var matriztemp = new double[3, 3]
+                        {
+                               { 0,  0,  0},
+                                { matrizGrises[i,j-1], matrizGrises[i,j], 0},
+                                {  matrizGrises[i+1,j-1],  matrizGrises[i+1,j],  0}
+                        };
+                        nuevaImagen[i, j] = MultiplicarMatrices(matriztemp, kernel);
+                    }
+                    if (i == w && j == 0)
+                    {
+                        var matriztemp = new double[3, 3]
+                        {
+                               { 0,  matrizGrises[i-1,j],matrizGrises[i-1,j+1]},
+                                { 0, matrizGrises[i,j], matrizGrises[i,j+1]},
+                                { 0, 0,  0}
+                        };
+                        nuevaImagen[i, j] = MultiplicarMatrices(matriztemp, kernel);
+                    }
+                    if (i == w && j == h)
+                    {
+                        var matriztemp = new double[3, 3]
+                        {
+                               { matrizGrises[i-1,j-1],  matrizGrises[i-1,j],0},
+                                {  matrizGrises[i,j-1], matrizGrises[i,j], matrizGrises[i,j+1]},
+                                { 0, 0,  0}
+                        };
+                        nuevaImagen[i, j] = MultiplicarMatrices(matriztemp, kernel);
+                    }
+                    if (i == 0 && j < h - 2)
+                    {
+                        var matriztemp = new double[3, 3]
+                        {
+                               { 0,  0 ,0},
+                                {  matrizGrises[i,j], matrizGrises[i,j+1], matrizGrises[i,j+2]},
+                                {  matrizGrises[i+1,j],  matrizGrises[i+1,j + 1],  matrizGrises[i+1,j + 2] },
+                        };
+                        nuevaImagen[i, j + 1] = MultiplicarMatrices(matriztemp, kernel);
+                    }
+                    if (i < w - 2 && j == 0)
+                    {
+                        var matriztemp = new double[3, 3]
+                        {
+                               { 0,  matrizGrises[i,j] , matrizGrises[i,j+1]},
+                                { 0, matrizGrises[i+1,j], matrizGrises[i+1,j+1]},
+                                { 0,  matrizGrises[i+2,j],  matrizGrises[i+2,j + 1] },
+                        };
+                        nuevaImagen[i + 1 , j] = MultiplicarMatrices(matriztemp, kernel);
+                    }
+                    if (i == w && j < h - 2)
+                    {
+                        var matriztemp = new double[3, 3]
+                        {
+                               { matrizGrises[i-1,j] ,  matrizGrises[i-1,j+1] , matrizGrises[i-1,j+2]},
+                                { matrizGrises[i,j], matrizGrises[i,j+1], matrizGrises[i,j+2]},
+                                { 0,  0,  0},
+                        };
+                        nuevaImagen[i, j+1] = MultiplicarMatrices(matriztemp, kernel);
+                    }
+                    if (i < w - 2 && j == h)
+                    {
+                        var matriztemp = new double[3, 3]
+                        {
+                               { matrizGrises[i,j-1] ,  matrizGrises[i,j] , 0},
+                                { matrizGrises[i+1,j-1], matrizGrises[i+1,j], 0},
+                                { matrizGrises[i+2,j-1], matrizGrises[i+2,j],  0},
+                        };
+                        nuevaImagen[i, j + 1] = MultiplicarMatrices(matriztemp, kernel);
                     }
                 }
 

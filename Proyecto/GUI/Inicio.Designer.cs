@@ -30,17 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_direccion = new System.Windows.Forms.TextBox();
-            this.groupBox_opciones = new System.Windows.Forms.GroupBox();
-            this.radioButton_personalizado = new System.Windows.Forms.RadioButton();
-            this.radioButton_afilar = new System.Windows.Forms.RadioButton();
-            this.radioButton_difuminado = new System.Windows.Forms.RadioButton();
-            this.radioButton_sobelInferior = new System.Windows.Forms.RadioButton();
-            this.radioButton_sobelIzquierdo = new System.Windows.Forms.RadioButton();
-            this.radioButton_contorno = new System.Windows.Forms.RadioButton();
-            this.radioButton_sobelDerecho = new System.Windows.Forms.RadioButton();
-            this.radioButton_sobelSuperior = new System.Windows.Forms.RadioButton();
-            this.radioButton_original = new System.Windows.Forms.RadioButton();
-            this.radioButton_realzar = new System.Windows.Forms.RadioButton();
             this.groupBox_matrizPersonalizada = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -63,8 +52,20 @@
             this.textBox_c = new System.Windows.Forms.TextBox();
             this.button_cargar = new System.Windows.Forms.Button();
             this.button_aplicar = new System.Windows.Forms.Button();
-            this.groupBox_opciones.SuspendLayout();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.radioButton_realzar = new System.Windows.Forms.RadioButton();
+            this.radioButton_original = new System.Windows.Forms.RadioButton();
+            this.radioButton_sobelSuperior = new System.Windows.Forms.RadioButton();
+            this.radioButton_sobelDerecho = new System.Windows.Forms.RadioButton();
+            this.radioButton_contorno = new System.Windows.Forms.RadioButton();
+            this.radioButton_sobelIzquierdo = new System.Windows.Forms.RadioButton();
+            this.radioButton_sobelInferior = new System.Windows.Forms.RadioButton();
+            this.radioButton_difuminado = new System.Windows.Forms.RadioButton();
+            this.radioButton_afilar = new System.Windows.Forms.RadioButton();
+            this.radioButton_personalizado = new System.Windows.Forms.RadioButton();
+            this.groupBox_opciones = new System.Windows.Forms.GroupBox();
             this.groupBox_matrizPersonalizada.SuspendLayout();
+            this.groupBox_opciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -82,129 +83,6 @@
             this.textBox_direccion.Name = "textBox_direccion";
             this.textBox_direccion.Size = new System.Drawing.Size(339, 27);
             this.textBox_direccion.TabIndex = 1;
-            // 
-            // groupBox_opciones
-            // 
-            this.groupBox_opciones.Controls.Add(this.radioButton_personalizado);
-            this.groupBox_opciones.Controls.Add(this.radioButton_afilar);
-            this.groupBox_opciones.Controls.Add(this.radioButton_difuminado);
-            this.groupBox_opciones.Controls.Add(this.radioButton_sobelInferior);
-            this.groupBox_opciones.Controls.Add(this.radioButton_sobelIzquierdo);
-            this.groupBox_opciones.Controls.Add(this.radioButton_contorno);
-            this.groupBox_opciones.Controls.Add(this.radioButton_sobelDerecho);
-            this.groupBox_opciones.Controls.Add(this.radioButton_sobelSuperior);
-            this.groupBox_opciones.Controls.Add(this.radioButton_original);
-            this.groupBox_opciones.Controls.Add(this.radioButton_realzar);
-            this.groupBox_opciones.Location = new System.Drawing.Point(11, 79);
-            this.groupBox_opciones.Name = "groupBox_opciones";
-            this.groupBox_opciones.Size = new System.Drawing.Size(345, 303);
-            this.groupBox_opciones.TabIndex = 2;
-            this.groupBox_opciones.TabStop = false;
-            this.groupBox_opciones.Text = "Opciones";
-            this.groupBox_opciones.Enter += new System.EventHandler(this.groupBox_opciones_Enter);
-            // 
-            // radioButton_personalizado
-            // 
-            this.radioButton_personalizado.AutoSize = true;
-            this.radioButton_personalizado.Location = new System.Drawing.Point(178, 251);
-            this.radioButton_personalizado.Name = "radioButton_personalizado";
-            this.radioButton_personalizado.Size = new System.Drawing.Size(121, 24);
-            this.radioButton_personalizado.TabIndex = 0;
-            this.radioButton_personalizado.Text = "Personalisado";
-            this.radioButton_personalizado.UseVisualStyleBackColor = true;
-            this.radioButton_personalizado.CheckedChanged += new System.EventHandler(this.radioButton_personalizado_CheckedChanged);
-            // 
-            // radioButton_afilar
-            // 
-            this.radioButton_afilar.AutoSize = true;
-            this.radioButton_afilar.Location = new System.Drawing.Point(178, 201);
-            this.radioButton_afilar.Name = "radioButton_afilar";
-            this.radioButton_afilar.Size = new System.Drawing.Size(66, 24);
-            this.radioButton_afilar.TabIndex = 10;
-            this.radioButton_afilar.Text = "Afilar";
-            this.radioButton_afilar.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_difuminado
-            // 
-            this.radioButton_difuminado.AutoSize = true;
-            this.radioButton_difuminado.Checked = true;
-            this.radioButton_difuminado.Location = new System.Drawing.Point(6, 48);
-            this.radioButton_difuminado.Name = "radioButton_difuminado";
-            this.radioButton_difuminado.Size = new System.Drawing.Size(109, 24);
-            this.radioButton_difuminado.TabIndex = 9;
-            this.radioButton_difuminado.TabStop = true;
-            this.radioButton_difuminado.Text = "Difuminado";
-            this.radioButton_difuminado.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_sobelInferior
-            // 
-            this.radioButton_sobelInferior.AutoSize = true;
-            this.radioButton_sobelInferior.Location = new System.Drawing.Point(6, 100);
-            this.radioButton_sobelInferior.Name = "radioButton_sobelInferior";
-            this.radioButton_sobelInferior.Size = new System.Drawing.Size(120, 24);
-            this.radioButton_sobelInferior.TabIndex = 7;
-            this.radioButton_sobelInferior.Text = "Sobel Inferior";
-            this.radioButton_sobelInferior.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_sobelIzquierdo
-            // 
-            this.radioButton_sobelIzquierdo.AutoSize = true;
-            this.radioButton_sobelIzquierdo.Location = new System.Drawing.Point(6, 148);
-            this.radioButton_sobelIzquierdo.Name = "radioButton_sobelIzquierdo";
-            this.radioButton_sobelIzquierdo.Size = new System.Drawing.Size(135, 24);
-            this.radioButton_sobelIzquierdo.TabIndex = 6;
-            this.radioButton_sobelIzquierdo.Text = "Sobel Izquierdo";
-            this.radioButton_sobelIzquierdo.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_contorno
-            // 
-            this.radioButton_contorno.AutoSize = true;
-            this.radioButton_contorno.Location = new System.Drawing.Point(6, 201);
-            this.radioButton_contorno.Name = "radioButton_contorno";
-            this.radioButton_contorno.Size = new System.Drawing.Size(92, 24);
-            this.radioButton_contorno.TabIndex = 5;
-            this.radioButton_contorno.Text = "Contorno";
-            this.radioButton_contorno.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_sobelDerecho
-            // 
-            this.radioButton_sobelDerecho.AutoSize = true;
-            this.radioButton_sobelDerecho.Location = new System.Drawing.Point(178, 148);
-            this.radioButton_sobelDerecho.Name = "radioButton_sobelDerecho";
-            this.radioButton_sobelDerecho.Size = new System.Drawing.Size(128, 24);
-            this.radioButton_sobelDerecho.TabIndex = 1;
-            this.radioButton_sobelDerecho.Text = "Sobel Derecho";
-            this.radioButton_sobelDerecho.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_sobelSuperior
-            // 
-            this.radioButton_sobelSuperior.AutoSize = true;
-            this.radioButton_sobelSuperior.Location = new System.Drawing.Point(178, 100);
-            this.radioButton_sobelSuperior.Name = "radioButton_sobelSuperior";
-            this.radioButton_sobelSuperior.Size = new System.Drawing.Size(128, 24);
-            this.radioButton_sobelSuperior.TabIndex = 0;
-            this.radioButton_sobelSuperior.Text = "Sobel Superior";
-            this.radioButton_sobelSuperior.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_original
-            // 
-            this.radioButton_original.AutoSize = true;
-            this.radioButton_original.Location = new System.Drawing.Point(6, 251);
-            this.radioButton_original.Name = "radioButton_original";
-            this.radioButton_original.Size = new System.Drawing.Size(83, 24);
-            this.radioButton_original.TabIndex = 4;
-            this.radioButton_original.Text = "Original";
-            this.radioButton_original.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_realzar
-            // 
-            this.radioButton_realzar.AutoSize = true;
-            this.radioButton_realzar.Location = new System.Drawing.Point(178, 48);
-            this.radioButton_realzar.Name = "radioButton_realzar";
-            this.radioButton_realzar.Size = new System.Drawing.Size(79, 24);
-            this.radioButton_realzar.TabIndex = 3;
-            this.radioButton_realzar.Text = "Realzar";
-            this.radioButton_realzar.UseVisualStyleBackColor = true;
             // 
             // groupBox_matrizPersonalizada
             // 
@@ -419,11 +297,143 @@
             this.button_aplicar.UseVisualStyleBackColor = true;
             this.button_aplicar.Click += new System.EventHandler(this.button_aplicar_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(87, 409);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(151, 28);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // radioButton_realzar
+            // 
+            this.radioButton_realzar.AutoSize = true;
+            this.radioButton_realzar.Location = new System.Drawing.Point(178, 48);
+            this.radioButton_realzar.Name = "radioButton_realzar";
+            this.radioButton_realzar.Size = new System.Drawing.Size(79, 24);
+            this.radioButton_realzar.TabIndex = 3;
+            this.radioButton_realzar.Text = "Realzar";
+            this.radioButton_realzar.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_original
+            // 
+            this.radioButton_original.AutoSize = true;
+            this.radioButton_original.Location = new System.Drawing.Point(6, 251);
+            this.radioButton_original.Name = "radioButton_original";
+            this.radioButton_original.Size = new System.Drawing.Size(83, 24);
+            this.radioButton_original.TabIndex = 4;
+            this.radioButton_original.Text = "Original";
+            this.radioButton_original.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_sobelSuperior
+            // 
+            this.radioButton_sobelSuperior.AutoSize = true;
+            this.radioButton_sobelSuperior.Location = new System.Drawing.Point(178, 100);
+            this.radioButton_sobelSuperior.Name = "radioButton_sobelSuperior";
+            this.radioButton_sobelSuperior.Size = new System.Drawing.Size(128, 24);
+            this.radioButton_sobelSuperior.TabIndex = 0;
+            this.radioButton_sobelSuperior.Text = "Sobel Superior";
+            this.radioButton_sobelSuperior.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_sobelDerecho
+            // 
+            this.radioButton_sobelDerecho.AutoSize = true;
+            this.radioButton_sobelDerecho.Location = new System.Drawing.Point(178, 148);
+            this.radioButton_sobelDerecho.Name = "radioButton_sobelDerecho";
+            this.radioButton_sobelDerecho.Size = new System.Drawing.Size(128, 24);
+            this.radioButton_sobelDerecho.TabIndex = 1;
+            this.radioButton_sobelDerecho.Text = "Sobel Derecho";
+            this.radioButton_sobelDerecho.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_contorno
+            // 
+            this.radioButton_contorno.AutoSize = true;
+            this.radioButton_contorno.Location = new System.Drawing.Point(6, 201);
+            this.radioButton_contorno.Name = "radioButton_contorno";
+            this.radioButton_contorno.Size = new System.Drawing.Size(92, 24);
+            this.radioButton_contorno.TabIndex = 5;
+            this.radioButton_contorno.Text = "Contorno";
+            this.radioButton_contorno.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_sobelIzquierdo
+            // 
+            this.radioButton_sobelIzquierdo.AutoSize = true;
+            this.radioButton_sobelIzquierdo.Location = new System.Drawing.Point(6, 148);
+            this.radioButton_sobelIzquierdo.Name = "radioButton_sobelIzquierdo";
+            this.radioButton_sobelIzquierdo.Size = new System.Drawing.Size(135, 24);
+            this.radioButton_sobelIzquierdo.TabIndex = 6;
+            this.radioButton_sobelIzquierdo.Text = "Sobel Izquierdo";
+            this.radioButton_sobelIzquierdo.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_sobelInferior
+            // 
+            this.radioButton_sobelInferior.AutoSize = true;
+            this.radioButton_sobelInferior.Location = new System.Drawing.Point(6, 100);
+            this.radioButton_sobelInferior.Name = "radioButton_sobelInferior";
+            this.radioButton_sobelInferior.Size = new System.Drawing.Size(120, 24);
+            this.radioButton_sobelInferior.TabIndex = 7;
+            this.radioButton_sobelInferior.Text = "Sobel Inferior";
+            this.radioButton_sobelInferior.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_difuminado
+            // 
+            this.radioButton_difuminado.AutoSize = true;
+            this.radioButton_difuminado.Checked = true;
+            this.radioButton_difuminado.Location = new System.Drawing.Point(6, 48);
+            this.radioButton_difuminado.Name = "radioButton_difuminado";
+            this.radioButton_difuminado.Size = new System.Drawing.Size(109, 24);
+            this.radioButton_difuminado.TabIndex = 9;
+            this.radioButton_difuminado.TabStop = true;
+            this.radioButton_difuminado.Text = "Difuminado";
+            this.radioButton_difuminado.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_afilar
+            // 
+            this.radioButton_afilar.AutoSize = true;
+            this.radioButton_afilar.Location = new System.Drawing.Point(178, 201);
+            this.radioButton_afilar.Name = "radioButton_afilar";
+            this.radioButton_afilar.Size = new System.Drawing.Size(66, 24);
+            this.radioButton_afilar.TabIndex = 10;
+            this.radioButton_afilar.Text = "Afilar";
+            this.radioButton_afilar.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_personalizado
+            // 
+            this.radioButton_personalizado.AutoSize = true;
+            this.radioButton_personalizado.Location = new System.Drawing.Point(178, 251);
+            this.radioButton_personalizado.Name = "radioButton_personalizado";
+            this.radioButton_personalizado.Size = new System.Drawing.Size(121, 24);
+            this.radioButton_personalizado.TabIndex = 0;
+            this.radioButton_personalizado.Text = "Personalisado";
+            this.radioButton_personalizado.UseVisualStyleBackColor = true;
+            this.radioButton_personalizado.CheckedChanged += new System.EventHandler(this.radioButton_personalizado_CheckedChanged);
+            // 
+            // groupBox_opciones
+            // 
+            this.groupBox_opciones.Controls.Add(this.radioButton_personalizado);
+            this.groupBox_opciones.Controls.Add(this.radioButton_afilar);
+            this.groupBox_opciones.Controls.Add(this.radioButton_difuminado);
+            this.groupBox_opciones.Controls.Add(this.radioButton_sobelInferior);
+            this.groupBox_opciones.Controls.Add(this.radioButton_sobelIzquierdo);
+            this.groupBox_opciones.Controls.Add(this.radioButton_contorno);
+            this.groupBox_opciones.Controls.Add(this.radioButton_sobelDerecho);
+            this.groupBox_opciones.Controls.Add(this.radioButton_sobelSuperior);
+            this.groupBox_opciones.Controls.Add(this.radioButton_original);
+            this.groupBox_opciones.Controls.Add(this.radioButton_realzar);
+            this.groupBox_opciones.Location = new System.Drawing.Point(11, 79);
+            this.groupBox_opciones.Name = "groupBox_opciones";
+            this.groupBox_opciones.Size = new System.Drawing.Size(345, 303);
+            this.groupBox_opciones.TabIndex = 2;
+            this.groupBox_opciones.TabStop = false;
+            this.groupBox_opciones.Text = "Opciones";
+            this.groupBox_opciones.Enter += new System.EventHandler(this.groupBox_opciones_Enter);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 451);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button_aplicar);
             this.Controls.Add(this.button_cargar);
             this.Controls.Add(this.groupBox_matrizPersonalizada);
@@ -433,10 +443,10 @@
             this.Name = "Inicio";
             this.Text = "Inicio";
             this.Load += new System.EventHandler(this.Inicio_Load);
-            this.groupBox_opciones.ResumeLayout(false);
-            this.groupBox_opciones.PerformLayout();
             this.groupBox_matrizPersonalizada.ResumeLayout(false);
             this.groupBox_matrizPersonalizada.PerformLayout();
+            this.groupBox_opciones.ResumeLayout(false);
+            this.groupBox_opciones.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,18 +456,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_direccion;
-        private System.Windows.Forms.GroupBox groupBox_opciones;
-        private System.Windows.Forms.RadioButton radioButton_difuminado;
         private System.Windows.Forms.GroupBox groupBox_matrizPersonalizada;
-        private System.Windows.Forms.RadioButton radioButton_sobelSuperior;
-        private System.Windows.Forms.RadioButton radioButton_sobelDerecho;
-        private System.Windows.Forms.RadioButton radioButton_realzar;
-        private System.Windows.Forms.RadioButton radioButton_original;
-        private System.Windows.Forms.RadioButton radioButton_contorno;
-        private System.Windows.Forms.RadioButton radioButton_sobelIzquierdo;
-        private System.Windows.Forms.RadioButton radioButton_sobelInferior;
-        private System.Windows.Forms.RadioButton radioButton_personalizado;
-        private System.Windows.Forms.RadioButton radioButton_afilar;
         private System.Windows.Forms.Button button_cargar;
         private System.Windows.Forms.Button button_aplicar;
         private System.Windows.Forms.TextBox textBox_h;
@@ -479,5 +478,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_e;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.RadioButton radioButton_realzar;
+        private System.Windows.Forms.RadioButton radioButton_original;
+        private System.Windows.Forms.RadioButton radioButton_sobelSuperior;
+        private System.Windows.Forms.RadioButton radioButton_sobelDerecho;
+        private System.Windows.Forms.RadioButton radioButton_contorno;
+        private System.Windows.Forms.RadioButton radioButton_sobelIzquierdo;
+        private System.Windows.Forms.RadioButton radioButton_sobelInferior;
+        private System.Windows.Forms.RadioButton radioButton_difuminado;
+        private System.Windows.Forms.RadioButton radioButton_afilar;
+        private System.Windows.Forms.RadioButton radioButton_personalizado;
+        private System.Windows.Forms.GroupBox groupBox_opciones;
     }
 }
