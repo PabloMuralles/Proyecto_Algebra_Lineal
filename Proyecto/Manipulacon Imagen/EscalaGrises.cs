@@ -1,12 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 
 namespace Proyecto.Manipulacon_Imagen
 {
     public class EscalaGrises
     {
+        /// <summary>
+        /// Metodo para convertir la imagen a escala de grises
+        /// </summary>
+        /// <param name="direccion">direccion de la imagen original</param>
+        /// <returns>bitmap de la imagen a escala a grises</returns>
         public Bitmap ConvertirImagen(string direccion)
         {
             try

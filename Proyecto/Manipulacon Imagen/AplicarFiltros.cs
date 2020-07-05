@@ -1,27 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Net;
-using System.Windows.Forms;
-using System.Runtime.InteropServices.WindowsRuntime;
+﻿using System.Drawing;
 
 namespace Proyecto.Manipulacon_Imagen
 {
     public class AplicarFiltros
     {
-        public Bitmap ObtenerImagenFiltro(Bitmap imagenGrises, string opcion)
+        /// <summary>
+        /// Metodo para obtener la imagen con el filtro aplicado sin contar el de personalizado
+        /// </summary>
+        /// <param name="imagenGrises">bitmap de la imagen a escala a grises</param>
+        /// <param name="opcion">nombre del filtro</param>
+        /// <returns>el bitmap de la imagen con el filtro aplicado y la matriz kernel aplicada</returns>
+        public (Bitmap, double[,]) ObtenerImagenFiltro(Bitmap imagenGrises, string opcion)
         {
             return ObtenerMatriz(imagenGrises, opcion);
         }
+
+        /// <summary>
+        /// Metodo para obtener la imagen con el filtro aplicado unicamente para la matriz personalizada
+        /// </summary>
+        /// <param name="imagenGrises">bitmap de la imagen a escala a grises</param>
+        /// <param name="kernel">kernel ingresado por el usuario</param>
+        /// <returns>el bitmap de la imagen con el filtro aplicado</returns>
+        public Bitmap ObtenerImagenFiltroPersonalizado(Bitmap imagenGrises, double[,] kernel)
+        {
+            return OperarMatriz(imagenGrises, kernel); ;
+        }
+
         /// <summary>
         /// Metodo para poder aplicar el filtro correspondiente sin contar la personalizada
         /// </summary>
         /// <param name="imagen">el bitmap de la imagen original en escala a grises</param>
         /// <param name="opc">la opcion seleccionada</param>
         /// <returns>el bitmap de la nueva imagen con el filtro aplicado</returns>
-        private Bitmap ObtenerMatriz(Bitmap imagen, string opc)
+        private (Bitmap, double[,]) ObtenerMatriz(Bitmap imagen, string opc)
         {
             double[,] kernel;
             Bitmap imagenFiltrada;
@@ -134,7 +145,7 @@ namespace Proyecto.Manipulacon_Imagen
                     return default;
 
             }
-            return imagenFiltrada;
+            return (imagenFiltrada, kernel);
 
         }
 
@@ -288,7 +299,7 @@ namespace Proyecto.Manipulacon_Imagen
                                 { 0, matrizGrises[i+1,j], matrizGrises[i+1,j+1]},
                                 { 0,  matrizGrises[i+2,j],  matrizGrises[i+2,j + 1] },
                         };
-                        nuevaImagen[i + 1 , j] = MultiplicarMatrices(matriztemp, kernel);
+                        nuevaImagen[i + 1, j] = MultiplicarMatrices(matriztemp, kernel);
                     }
                     if (i == w && j < h - 2)
                     {
@@ -298,7 +309,7 @@ namespace Proyecto.Manipulacon_Imagen
                                 { matrizGrises[i,j], matrizGrises[i,j+1], matrizGrises[i,j+2]},
                                 { 0,  0,  0},
                         };
-                        nuevaImagen[i, j+1] = MultiplicarMatrices(matriztemp, kernel);
+                        nuevaImagen[i, j + 1] = MultiplicarMatrices(matriztemp, kernel);
                     }
                     if (i < w - 2 && j == h)
                     {

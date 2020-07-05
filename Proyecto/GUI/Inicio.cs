@@ -1,12 +1,7 @@
-﻿using Microsoft.VisualBasic;
-using System;
+﻿using System;
 using System.IO;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Security.AccessControl;
-using System.Drawing;
-using System.Linq;
 
 namespace Proyecto.GUI
 {
@@ -59,7 +54,7 @@ namespace Proyecto.GUI
                     {
                         textBox_direccion.Text = direccion;
                     }
-                    
+
                 }
                 catch (Exception p)
                 {
@@ -70,7 +65,7 @@ namespace Proyecto.GUI
 
         private void textBox_a_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
         /// <summary>
         /// Metodo para poder desactivar o activar los textbox de la matriz personalizada
@@ -91,8 +86,6 @@ namespace Proyecto.GUI
 
         }
 
-       
-
         /// <summary>
         /// metodo para verificar que lo que se ingreso a cada posicion de la matriz este de manera correcta y que solo sean numeros
         /// </summary>
@@ -100,7 +93,7 @@ namespace Proyecto.GUI
         private bool VerificarTextBoxs()
         {
             Regex numeros = new Regex(@"^([0-9]+\.[0-9]+)|([0-9]+)$");
-         
+
 
             if (numeros.IsMatch(textBox_a.Text) && numeros.IsMatch(textBox_b.Text) && numeros.IsMatch(textBox_c.Text) && numeros.IsMatch(textBox_d.Text)
                 && numeros.IsMatch(textBox_e.Text) && numeros.IsMatch(textBox_f.Text) && numeros.IsMatch(textBox_g.Text) && numeros.IsMatch(textBox_h.Text)
@@ -117,26 +110,12 @@ namespace Proyecto.GUI
 
         private void button_aplicar_Click(object sender, EventArgs e)
         {
+            // verficar si se cargo una imagen
 
             if (!string.IsNullOrEmpty(direccion))
-            {
-                if (comboBox_filtros.SelectedIndex == 9)
-                {
-                    if (VerificarTextBoxs() == true)
-                    {
-                        AplicarFiltros();
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ingreso algo difierente a un número decimal, entero, dejo en blanco alguna o ingreso mal el número");
-                    }
-                }
-                else
-                {
-                    AplicarFiltros();
-                }
-
+            { 
+               AplicarFiltros();
+                 
             }
             else
             {
@@ -150,84 +129,127 @@ namespace Proyecto.GUI
         /// </summary>
         private void AplicarFiltros()
         {
-            //try
-            //{
-                
-                 
+            try
+            {
                 var objEscalaGrises = new Manipulacon_Imagen.EscalaGrises();// objeto de la clase escalas a grices
                 var opcionSeleccionada = comboBox_filtros.Text;// linq para poder saber que opcion fue seleccionada
                 var bmpGrises = objEscalaGrises.ConvertirImagen(direccion);// convertir la imagen a escala de grises 
-                pictureBox_grises.Image = bmpGrises;
+                pictureBox_grises.Image = bmpGrises; // mostrar la imagen a grises
                 pictureBox_grises.SizeMode = PictureBoxSizeMode.StretchImage;
                 var objFiltros = new Manipulacon_Imagen.AplicarFiltros();// aplicar los filtros a la imgen a grises
-                var bmpFiltrada = objFiltros.ObtenerImagenFiltro(bmpGrises, opcionSeleccionada);// obtener la imagen filtadra
-                pictureBox_filtrada.Image = bmpFiltrada;
-                pictureBox_filtrada.SizeMode = PictureBoxSizeMode.StretchImage;
+                if (comboBox_filtros.SelectedIndex == 9)
+                {
+                    if (VerificarTextBoxs() == true)
+                    {
+                        var kernel = new double[3, 3]
+                        {
+                            {Convert.ToDouble(textBox_a.Text),Convert.ToDouble(textBox_b.Text),Convert.ToDouble(textBox_c.Text) },
+                            {Convert.ToDouble(textBox_d.Text),Convert.ToDouble(textBox_e.Text),Convert.ToDouble(textBox_f.Text) },
+                            {Convert.ToDouble(textBox_g.Text),Convert.ToDouble(textBox_h.Text),Convert.ToDouble(textBox_i.Text) }
 
-            //}
-            //catch (Exception p)
-            //{
-            //    MessageBox.Show(p.Message);
-            //    this.Show();
-            //}
+                        };
+                        var bmpFiltrada = objFiltros.ObtenerImagenFiltroPersonalizado(bmpGrises, kernel);
+                        pictureBox_filtrada.Image = bmpFiltrada;//mostrar la imagen a grises
+                        pictureBox_filtrada.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingreso algo difierente a un número decimal, entero, dejo en blanco alguna o ingreso mal el número");
+                    }
+                }
+                else
+                {
+                    
+                    (var bmpFiltrada, var kernelUtilizado) = objFiltros.ObtenerImagenFiltro(bmpGrises, opcionSeleccionada);// obtener la imagen filtadra
+                    MostrarKernelUtilizado(kernelUtilizado, comboBox_filtros.SelectedIndex);// muesta la matriz kernel utilizada
+                    pictureBox_filtrada.Image = bmpFiltrada;//mostrar la imagen a grises
+                    pictureBox_filtrada.SizeMode = PictureBoxSizeMode.StretchImage;
+                     
+                }
+            }
+            catch (Exception p)
+            {
+                MessageBox.Show(p.Message);
+                this.Show();
+            }
 
         }
 
-       
- 
+        /// <summary>
+        /// Metodo para mostrar la matriz kernel utilizada
+        /// </summary>
+        /// <param name="kernel">matriz kernel </param>
+        /// <param name="opcion">index de la opcion de filtro seleccionada</param>
+        private void MostrarKernelUtilizado(double[,] kernel, int opcion)
+        {
+            if (opcion != 9)
+            {
+                textBox_a.Text =  kernel[0, 0].ToString();
+                textBox_b.Text = kernel[0, 1].ToString();
+                textBox_c.Text = kernel[0, 2].ToString();
+                textBox_d.Text = kernel[1, 0].ToString();
+                textBox_e.Text = kernel[1, 1].ToString();
+                textBox_f.Text = kernel[1, 2].ToString();
+                textBox_g.Text = kernel[2, 0].ToString();
+                textBox_h.Text = kernel[2, 1].ToString();
+                textBox_i.Text = kernel[2, 2].ToString();
+            }
+        }
+
 
         #region key press textbox
 
- 
+
         private void textBox_a_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+
         }
 
         private void textBox_b_KeyPress(object sender, KeyPressEventArgs e)
         {
-          
+
         }
 
         private void textBox_c_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         private void textBox_d_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         private void textBox_e_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         private void textBox_f_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+
         }
 
         private void textBox_g_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         private void textBox_h_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         private void textBox_i_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         #endregion
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+            // definir las opciones de filtros
             comboBox_filtros.Items.Add("Difuminado");
             comboBox_filtros.Items.Add("Sobel Inferior");
             comboBox_filtros.Items.Add("Sobel Izquierdo");
@@ -253,6 +275,7 @@ namespace Proyecto.GUI
 
         private void button_borrar_Click(object sender, EventArgs e)
         {
+            // borrar el contenido de la matriz
             textBox_a.Clear();
             textBox_b.Clear();
             textBox_c.Clear();
@@ -266,6 +289,7 @@ namespace Proyecto.GUI
 
         private void comboBox_filtros_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // la matriz se activa unicamente cuando esta seleccionada la opcion de personalizado al igual que le boton borrar
             if (comboBox_filtros.SelectedIndex == 9)
             {
                 ActivarMatriz(true);
