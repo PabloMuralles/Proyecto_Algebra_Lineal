@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Xml.XPath;
 
 namespace Proyecto.Manipulacon_Imagen
 {
@@ -349,7 +350,7 @@ namespace Proyecto.Manipulacon_Imagen
                     resultado += (submatriz[i, j] * kernel[i, j]);
                 }
             }
-
+            
             return resultado;
         }
 

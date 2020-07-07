@@ -15,29 +15,32 @@ namespace Proyecto.Manipulacon_Imagen
             try
             {
                 var bmp = new Bitmap(direccion);
+                var bmpgrises = new Bitmap(bmp);
                 var ancho = bmp.Width;
                 var largo = bmp.Height;
 
-                Color pixel;
+                
 
                 for (int y = 0; y < largo; y++)
                 {
                     for (int x = 0; x < ancho; x++)
                     {
-                        pixel = bmp.GetPixel(x, y);
-                         
-                        var r = pixel.R;
-                        var g = pixel.G;
-                        var b = pixel.B;
+                        Color pixel = bmp.GetPixel(x, y);
 
-                        var promedio = (r + g + b) / 3;
+                        var A = pixel.A;
+                        var G = pixel.G;
+                        var R = pixel.R;
+                        var B = pixel.B;
 
-                        bmp.SetPixel(x, y, Color.FromArgb(promedio, promedio, promedio));
+                        var promedio = Convert.ToInt32((R * 0.3) + (G * 0.59) + (B * 0.11));
+                   
+
+                        bmpgrises.SetPixel(x, y, Color.FromArgb(A, promedio, promedio, promedio));
 
                     }
 
                 }
-                return bmp;
+                return bmpgrises;
 
             }
             catch (Exception)
