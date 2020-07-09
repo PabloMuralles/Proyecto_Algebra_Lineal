@@ -19,23 +19,23 @@ namespace Proyecto.Manipulacon_Imagen
                 var ancho = bmp.Width;
                 var largo = bmp.Height;
 
-                
+                Color pixel;
 
                 for (int y = 0; y < largo; y++)
                 {
                     for (int x = 0; x < ancho; x++)
                     {
-                        Color pixel = bmp.GetPixel(x, y);
+                        pixel = bmp.GetPixel(x, y);
 
                         var A = pixel.A;
                         var G = pixel.G;
                         var R = pixel.R;
                         var B = pixel.B;
 
-                        var promedio = Convert.ToInt32((R * 0.3) + (G * 0.59) + (B * 0.11));
-                   
+                        var promedio = (A + G + B) / 3;
 
-                        bmpgrises.SetPixel(x, y, Color.FromArgb(A, promedio, promedio, promedio));
+
+                        bmpgrises.SetPixel(x, y, Color.FromArgb(promedio, promedio, promedio));
 
                     }
 

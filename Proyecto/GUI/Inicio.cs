@@ -261,6 +261,7 @@ namespace Proyecto.GUI
             comboBox_filtros.Items.Add("Afilar");
             comboBox_filtros.Items.Add("Personalizado");
             comboBox_filtros.SelectedIndex = 0;
+            button_cargar.Select();
         }
 
         private void groupBox_matrizPersonalizada_Enter(object sender, EventArgs e)

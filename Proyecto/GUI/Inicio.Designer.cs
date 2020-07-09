@@ -81,7 +81,7 @@
             this.textBox_direccion.Location = new System.Drawing.Point(162, 55);
             this.textBox_direccion.Name = "textBox_direccion";
             this.textBox_direccion.Size = new System.Drawing.Size(280, 27);
-            this.textBox_direccion.TabIndex = 1;
+            this.textBox_direccion.TabIndex = 0;
             // 
             // groupBox_matrizPersonalizada
             // 
@@ -107,7 +107,7 @@
             this.groupBox_matrizPersonalizada.Location = new System.Drawing.Point(18, 117);
             this.groupBox_matrizPersonalizada.Name = "groupBox_matrizPersonalizada";
             this.groupBox_matrizPersonalizada.Size = new System.Drawing.Size(336, 268);
-            this.groupBox_matrizPersonalizada.TabIndex = 0;
+            this.groupBox_matrizPersonalizada.TabIndex = 4;
             this.groupBox_matrizPersonalizada.TabStop = false;
             this.groupBox_matrizPersonalizada.Text = "Matriz";
             this.groupBox_matrizPersonalizada.Enter += new System.EventHandler(this.groupBox_matrizPersonalizada_Enter);
@@ -117,7 +117,7 @@
             this.button_borrar.Location = new System.Drawing.Point(107, 233);
             this.button_borrar.Name = "button_borrar";
             this.button_borrar.Size = new System.Drawing.Size(79, 29);
-            this.button_borrar.TabIndex = 2;
+            this.button_borrar.TabIndex = 10;
             this.button_borrar.Text = "Borrar";
             this.button_borrar.UseVisualStyleBackColor = true;
             this.button_borrar.Click += new System.EventHandler(this.button_borrar_Click);
@@ -208,7 +208,7 @@
             this.textBox_e.Location = new System.Drawing.Point(116, 126);
             this.textBox_e.Name = "textBox_e";
             this.textBox_e.Size = new System.Drawing.Size(70, 27);
-            this.textBox_e.TabIndex = 0;
+            this.textBox_e.TabIndex = 5;
             this.textBox_e.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_e_KeyPress);
             // 
             // textBox_i
@@ -216,7 +216,7 @@
             this.textBox_i.Location = new System.Drawing.Point(226, 192);
             this.textBox_i.Name = "textBox_i";
             this.textBox_i.Size = new System.Drawing.Size(70, 27);
-            this.textBox_i.TabIndex = 0;
+            this.textBox_i.TabIndex = 9;
             this.textBox_i.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_i_KeyPress);
             // 
             // textBox_h
@@ -224,7 +224,7 @@
             this.textBox_h.Location = new System.Drawing.Point(116, 192);
             this.textBox_h.Name = "textBox_h";
             this.textBox_h.Size = new System.Drawing.Size(70, 27);
-            this.textBox_h.TabIndex = 0;
+            this.textBox_h.TabIndex = 8;
             this.textBox_h.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_h_KeyPress);
             // 
             // textBox_g
@@ -232,7 +232,7 @@
             this.textBox_g.Location = new System.Drawing.Point(17, 192);
             this.textBox_g.Name = "textBox_g";
             this.textBox_g.Size = new System.Drawing.Size(68, 27);
-            this.textBox_g.TabIndex = 0;
+            this.textBox_g.TabIndex = 7;
             this.textBox_g.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_g_KeyPress);
             // 
             // textBox_f
@@ -240,7 +240,7 @@
             this.textBox_f.Location = new System.Drawing.Point(226, 126);
             this.textBox_f.Name = "textBox_f";
             this.textBox_f.Size = new System.Drawing.Size(70, 27);
-            this.textBox_f.TabIndex = 0;
+            this.textBox_f.TabIndex = 6;
             this.textBox_f.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_f_KeyPress);
             // 
             // textBox_d
@@ -248,7 +248,7 @@
             this.textBox_d.Location = new System.Drawing.Point(15, 126);
             this.textBox_d.Name = "textBox_d";
             this.textBox_d.Size = new System.Drawing.Size(70, 27);
-            this.textBox_d.TabIndex = 0;
+            this.textBox_d.TabIndex = 4;
             this.textBox_d.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_d_KeyPress);
             // 
             // textBox_b
@@ -256,7 +256,7 @@
             this.textBox_b.Location = new System.Drawing.Point(116, 64);
             this.textBox_b.Name = "textBox_b";
             this.textBox_b.Size = new System.Drawing.Size(70, 27);
-            this.textBox_b.TabIndex = 0;
+            this.textBox_b.TabIndex = 2;
             this.textBox_b.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_b_KeyPress);
             // 
             // textBox_a
@@ -264,7 +264,7 @@
             this.textBox_a.Location = new System.Drawing.Point(15, 64);
             this.textBox_a.Name = "textBox_a";
             this.textBox_a.Size = new System.Drawing.Size(70, 27);
-            this.textBox_a.TabIndex = 0;
+            this.textBox_a.TabIndex = 1;
             this.textBox_a.TextChanged += new System.EventHandler(this.textBox_a_TextChanged);
             this.textBox_a.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_a_KeyPress);
             // 
@@ -273,7 +273,7 @@
             this.textBox_c.Location = new System.Drawing.Point(226, 64);
             this.textBox_c.Name = "textBox_c";
             this.textBox_c.Size = new System.Drawing.Size(70, 27);
-            this.textBox_c.TabIndex = 0;
+            this.textBox_c.TabIndex = 3;
             this.textBox_c.TextChanged += new System.EventHandler(this.textBox_c_TextChanged);
             this.textBox_c.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_c_KeyPress);
             // 
@@ -282,7 +282,7 @@
             this.button_cargar.Location = new System.Drawing.Point(448, 55);
             this.button_cargar.Name = "button_cargar";
             this.button_cargar.Size = new System.Drawing.Size(94, 31);
-            this.button_cargar.TabIndex = 3;
+            this.button_cargar.TabIndex = 1;
             this.button_cargar.Text = "Cargar";
             this.button_cargar.UseVisualStyleBackColor = true;
             this.button_cargar.Click += new System.EventHandler(this.button_cargar_Click);
@@ -292,7 +292,7 @@
             this.button_aplicar.Location = new System.Drawing.Point(404, 338);
             this.button_aplicar.Name = "button_aplicar";
             this.button_aplicar.Size = new System.Drawing.Size(94, 29);
-            this.button_aplicar.TabIndex = 4;
+            this.button_aplicar.TabIndex = 3;
             this.button_aplicar.Text = "Aplicar";
             this.button_aplicar.UseVisualStyleBackColor = true;
             this.button_aplicar.Click += new System.EventHandler(this.button_aplicar_Click);
@@ -303,7 +303,7 @@
             this.comboBox_filtros.Location = new System.Drawing.Point(376, 154);
             this.comboBox_filtros.Name = "comboBox_filtros";
             this.comboBox_filtros.Size = new System.Drawing.Size(151, 28);
-            this.comboBox_filtros.TabIndex = 5;
+            this.comboBox_filtros.TabIndex = 2;
             this.comboBox_filtros.SelectedIndexChanged += new System.EventHandler(this.comboBox_filtros_SelectedIndexChanged);
             // 
             // label11
