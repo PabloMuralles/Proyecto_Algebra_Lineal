@@ -8,6 +8,8 @@ namespace Proyecto.GUI
     public partial class Inicio : Form
     {
         private string direccion = string.Empty;
+
+        private bool statusImagenOk = false;
         public Inicio()
         {
             InitializeComponent();
@@ -46,13 +48,15 @@ namespace Proyecto.GUI
                     //var prueba = Image.FromFile(direccion);
                     //var asdf = prueba.PixelFormat;
 
-                    if (Extencion != ".png" && direccion == null)
+                    if (Extencion != ".png")
                     {
-                        throw new Exception("No se cargo nada o la extencion no es png");
+                        textBox_direccion.Text = direccion;
+                        throw new Exception("La extensión unicamente puede ser PNG");
                     }
                     else
                     {
                         textBox_direccion.Text = direccion;
+                        statusImagenOk = true;
                     }
 
                 }
@@ -111,17 +115,32 @@ namespace Proyecto.GUI
         private void button_aplicar_Click(object sender, EventArgs e)
         {
             // verficar si se cargo una imagen
-
-            if (!string.IsNullOrEmpty(direccion))
-            { 
-               AplicarFiltros();
-                 
-            }
-            else
+            try
             {
-                MessageBox.Show("No se cargado ninguna imagen");
-            }
+                if (!string.IsNullOrEmpty(direccion))
+                {
+                    if (statusImagenOk == true)
+                    {
+                       AplicarFiltros();
 
+                    }
+                    else
+                    {
+                        throw new Exception("Cambie a una imagen formato PNG");
+                    }
+                }
+                else
+                {
+                    throw new Exception("No se cargado ninguna imagen");
+                }
+
+
+            }
+            catch (Exception p)
+            {
+                MessageBox.Show(p.Message);
+                this.Show();
+            }
         }
 
         /// <summary>
